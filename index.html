@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christophe POLLET – Maçonnerie, Rénovation, Terrasses à Plaisir (78370)</title>
+  <meta name="description" content="Artisan maçon à Plaisir (78370). Maçonnerie, rénovation, terrasses et ravalement de pierres dans les Yvelines. Devis gratuit. Tél : 06 33 55 14 22." />
+  <meta name="keywords" content="maçonnerie Plaisir, maçon Yvelines, rénovation terrasse 78, ravalement pierres, maçon Versailles, travaux maçonnerie 78370" />
+  <meta name="author" content="Christophe POLLET" />
+  <meta property="og:title" content="Christophe POLLET – Maçon &amp; Rénovation Plaisir 78" />
+  <meta property="og:description" content="Maçonnerie, rénovation, terrasses et ravalement pierres dans les Yvelines. Artisan de confiance depuis plus de 20 ans." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <!-- JSON-LD LocalBusiness structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Christophe POLLET Ma\u00e7onnerie",
+    "description": "Artisan ma\u00e7on \u00e0 Plaisir (78370). Ma\u00e7onnerie, r\u00e9novation, terrasses et ravalement de pierres dans les Yvelines.",
+    "url": "https://pollet-maconnerie.fr",
+    "telephone": "+33633551422",
+    "email": "pollet.maconnerie@free.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "47, rue de Normandie",
+      "addressLocality": "Plaisir",
+      "postalCode": "78370",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 48.8234,
+      "longitude": 1.9523
+    },
+    "areaServed": {"@type": "GeoCircle", "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 48.8234, "longitude": 1.9523}, "geoRadius": "30000"},
+    "priceRange": "\u20ac\u20ac",
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47"}
+  }
+  </script>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="custom-cursor" aria-hidden="true"></div>
+<div id="custom-cursor-dot" aria-hidden="true"></div>
+
+<!-- Scroll Progress Bar -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- Page transition overlay -->
+<div class="page-transition-overlay" id="page-overlay" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#" onclick="showPage('accueil')" id="logo-link" aria-label="Accueil Christophe POLLET">
+      <svg class="logo-house" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="60" height="60" rx="12" fill="#D42B27" fill-opacity="0.1"/>
+        <path d="M10 32 L30 14 L50 32" stroke="#D42B27" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="18" y="31" width="24" height="17" rx="1" stroke="#D42B27" stroke-width="2.5" fill="none"/>
+        <rect x="26" y="38" width="8" height="10" rx="1" stroke="#D42B27" stroke-width="2" fill="none"/>
+        <rect x="40" y="19" width="5" height="8" stroke="#D42B27" stroke-width="2" fill="none"/>
+        <path d="M40 15 L45 15 L45 19" stroke="#D42B27" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name">Christophe POLLET</span>
+        <span class="logo-tagline">Maçonnerie · Rénovation · Plaisir 78</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="nav-links" role="menubar">
+      <li role="none">
+        <button class="nav-link active" id="nav-accueil" onclick="showPage('accueil')" role="menuitem">
+          <i data-lucide="home" class="nav-icon"></i> Accueil
+        </button>
+      </li>
+      <li role="none">
+        <button class="nav-link" id="nav-prestations" onclick="showPage('prestations')" role="menuitem">
+          <i data-lucide="hammer" class="nav-icon"></i> Prestations
+        </button>
+      </li>
+      <li role="none">
+        <button class="nav-link" id="nav-realisations" onclick="showPage('realisations')" role="menuitem">
+          <i data-lucide="image" class="nav-icon"></i> Avant / Après
+        </button>
+      </li>
+      <li role="none">
+        <button class="nav-link" id="nav-contact" onclick="showPage('contact')" role="menuitem">
+          <i data-lucide="file-text" class="nav-icon"></i> Devis Gratuit
+        </button>
+      </li>
+      <li role="none">
+        <button class="nav-link admin-link" id="nav-admin" onclick="showPage('admin')" role="menuitem" style="position:relative;">
+          <i data-lucide="settings" class="nav-icon"></i> Admin
+          <span id="admin-badge" class="admin-notif-badge" style="display:none;"></span>
+        </button>
+      </li>
+    </ul>
+
+    <button id="dark-toggle" aria-label="Basculer le mode sombre" onclick="toggleDark()" title="Mode sombre">
+      <i data-lucide="moon" id="dark-icon" style="width:17px;height:17px;"></i>
+    </button>
+
+    <button class="nav-burger" id="nav-burger" aria-label="Menu mobile" aria-expanded="false" onclick="toggleBurger()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     PAGE : ACCUEIL
+══════════════════════════════════════════════════ -->
+<div class="page active" id="page-accueil">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Section héro">
+    <div class="hero-bg" id="hero-bg" role="img" aria-label="Maison en pierre rénovée avec terrasse"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-checker-strip"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Artisan disponible dans les Yvelines (78)
+      </div>
+      <h1 class="hero-title">
+        Votre artisan maçon
+        <span class="highlight">de confiance à Plaisir</span>
+      </h1>
+      <p class="hero-subtitle">
+        Maçonnerie · Rénovation · Terrasses · Ravalement de pierres.<br/>
+        Plus de 20 ans d'expérience dans les Yvelines. Devis gratuit et rapide.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" id="hero-cta-devis" onclick="showPage('contact')">
+          <i data-lucide="clipboard-list" class="btn-icon"></i>
+          Demander un devis gratuit
+        </button>
+        <button class="btn-secondary" id="hero-cta-realisations" onclick="showPage('realisations')">
+          <i data-lucide="images" class="btn-icon"></i>
+          Voir nos réalisations
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" id="counter-years" data-target="20" data-suffix="+">20+</span>
+          <span class="stat-label">Années d'expérience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="counter-projects" data-target="300" data-suffix="+">300+</span>
+          <span class="stat-label">Chantiers réalisés</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="counter-zones" data-target="30" data-suffix="km">30km</span>
+          <span class="stat-label">Zone d'intervention</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="counter-rating">4.9★</span>
+          <span class="stat-label">Note clients</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee ticker -->
+  <div class="marquee-ticker" aria-hidden="true">
+    <div class="marquee-track" id="marquee-track">
+      <span>+20 ans d'expérience</span>
+      <span class="sep">·</span>
+      <span>300+ chantiers réalisés</span>
+      <span class="sep">·</span>
+      <span>Plaisir · Versailles · Yvelines 78</span>
+      <span class="sep">·</span>
+      <span>Devis gratuit sous 48h</span>
+      <span class="sep">·</span>
+      <span>Assurance décennale</span>
+      <span class="sep">·</span>
+      <span>Note clients 4.9 ★</span>
+      <span class="sep">·</span>
+      <span>+20 ans d'expérience</span>
+      <span class="sep">·</span>
+      <span>300+ chantiers réalisés</span>
+      <span class="sep">·</span>
+      <span>Plaisir · Versailles · Yvelines 78</span>
+      <span class="sep">·</span>
+      <span>Devis gratuit sous 48h</span>
+      <span class="sep">·</span>
+      <span>Assurance décennale</span>
+      <span class="sep">·</span>
+      <span>Note clients 4.9 ★</span>
+    </div>
+  </div>
+
+  <!-- Wave divider -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F5EFE4"/>
+    </svg>
+  </div>
+
+  <!-- Trust Badges -->
+  <div class="trust-badges-section fade-in">
+    <div class="section-inner">
+      <div class="trust-badges-grid">
+        <div class="trust-badge-card">
+          <div class="trust-badge-icon" style="background:linear-gradient(135deg,#D42B27,#A61F1C);">
+            <i data-lucide="shield-check" style="width:24px;height:24px;color:#fff;"></i>
+          </div>
+          <div class="trust-badge-info">
+            <strong>Assurance décennale</strong>
+            <div class="trust-badge-label">Travaux garantis 10 ans</div>
+          </div>
+        </div>
+        <div class="trust-badge-card">
+          <div class="trust-badge-icon" style="background:linear-gradient(135deg,#D4A017,#A37B12);">
+            <i data-lucide="award" style="width:24px;height:24px;color:#fff;"></i>
+          </div>
+          <div class="trust-badge-info">
+            <strong>+20 ans d'expérience</strong>
+            <div class="trust-badge-label">Artisan qualifié depuis 2003</div>
+          </div>
+        </div>
+        <div class="trust-badge-card">
+          <div class="trust-badge-icon" style="background:linear-gradient(135deg,#1B6CA8,#0F4C81);">
+            <i data-lucide="map-pin" style="width:24px;height:24px;color:#fff;"></i>
+          </div>
+          <div class="trust-badge-info">
+            <strong>Artisan local</strong>
+            <div class="trust-badge-label">Plaisir · Yvelines (78)</div>
+          </div>
+        </div>
+        <div class="trust-badge-card">
+          <div class="trust-badge-icon" style="background:linear-gradient(135deg,#16a34a,#166534);">
+            <i data-lucide="clock" style="width:24px;height:24px;color:#fff;"></i>
+          </div>
+          <div class="trust-badge-info">
+            <strong>Devis sous 48h</strong>
+            <div class="trust-badge-label">Réponse garantie et gratuite</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section" id="services-section" style="padding-top: var(--space-xl);">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <span class="section-tag">Nos métiers</span>
+        <h2 class="section-title">Ce que nous <span>réalisons</span> pour vous</h2>
+        <p class="section-desc">Des travaux de qualité artisanale, réalisés dans les règles de l'art, pour embellir et valoriser votre bien.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in" id="srv-maconnerie" onclick="showPage('prestations')" tabindex="0" role="button" aria-label="Maçonnerie générale">
+          <div class="card-glow"></div>
+          <div class="service-icon"><i data-lucide="brick-wall" class="svc-icon"></i></div>
+          <h3>Maçonnerie Générale</h3>
+          <p>Construction de murs, fondations, dalles, escaliers en pierre et béton. Travaux soignés et durables.</p>
+        </div>
+        <div class="service-card fade-in" id="srv-renovation" onclick="showPage('prestations')" tabindex="0" role="button" aria-label="Rénovation">
+          <div class="card-glow"></div>
+          <div class="service-icon"><i data-lucide="hard-hat" class="svc-icon"></i></div>
+          <h3>Rénovation</h3>
+          <p>Rénovation complète ou partielle de votre habitation : ouvertures, reprises en sous-œuvre, consolidation.</p>
+        </div>
+        <div class="service-card fade-in" id="srv-terrasses" onclick="showPage('prestations')" tabindex="0" role="button" aria-label="Terrasses">
+          <div class="card-glow"></div>
+          <div class="service-icon"><i data-lucide="layers" class="svc-icon"></i></div>
+          <h3>Terrasses</h3>
+          <p>Création et pose de terrasses en pierre naturelle, carrelage extérieur, dalles béton et pavés.</p>
+        </div>
+        <div class="service-card fade-in" id="srv-ravalement" onclick="showPage('prestations')" tabindex="0" role="button" aria-label="Ravalement pierres">
+          <div class="card-glow"></div>
+          <div class="service-icon"><i data-lucide="paintbrush-vertical" class="svc-icon"></i></div>
+          <h3>Ravalement de Pierres</h3>
+          <p>Nettoyage, rejointoiement et restauration de façades en pierre naturelle. Respect du patrimoine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Partenaires / Fournisseurs -->
+  <section class="section partners-section" style="background:var(--beige);">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <span class="section-tag">Nos fournisseurs</span>
+        <h2 class="section-title">Des matériaux <span>de qualité</span></h2>
+        <p class="section-desc">Nous travaillons exclusivement avec des fournisseurs reconnus pour garantir la durabilité et l'ésthétique de chaque réalisation.</p>
+      </div>
+      <div class="partners-grid fade-in">
+        <div class="partner-card"><div class="partner-logo-text" style="color:#E63946;">Weber</div><span>Mortiers &amp; enduits</span></div>
+        <div class="partner-card"><div class="partner-logo-text" style="color:#1D6FA4;">Lafarge</div><span>Ciments &amp; bétons</span></div>
+        <div class="partner-card"><div class="partner-logo-text" style="color:#F4A261;">Mapei</div><span>Colles &amp; joints</span></div>
+        <div class="partner-card"><div class="partner-logo-text" style="color:#2A9D8F;">Parexlanko</div><span>Ravalement</span></div>
+        <div class="partner-card"><div class="partner-logo-text" style="color:#6B4E3D;">Alkern</div><span>Parpaings &amp; blocs</span></div>
+        <div class="partner-card"><div class="partner-logo-text" style="color:#8338EC;">Rinn</div><span>Pavés &amp; bordures</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculateur -->
+  <section class="section" style="background:var(--blanc);">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <span class="section-tag">Outil pratique</span>
+        <h2 class="section-title">Estimez votre <span>budget travaux</span></h2>
+        <p class="section-desc">Utilisez notre calculateur pour obtenir une estimation indicative de coût. Votre devis précis sera établi lors de la visite gratuite.</p>
+      </div>
+      <div class="calculator-card fade-in" id="calculator-card">
+        <div class="calc-row">
+          <label for="calc-type">Type de prestation</label>
+          <select id="calc-type" onchange="calcUpdate()">
+            <option value="terrasse">Terrasse en pierre / dallage</option>
+            <option value="maconnerie">Maçonnerie générale</option>
+            <option value="ravalement">Ravalement de façade</option>
+            <option value="renovation">Rénovation intérieure</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label for="calc-surface">Surface concernée</label>
+          <div class="calc-slider-row">
+            <input type="range" id="calc-surface" min="10" max="300" value="80" oninput="calcUpdate()" />
+            <span id="calc-surface-val">80 m²</span>
+          </div>
+        </div>
+        <div class="calc-row">
+          <label for="calc-qualite">Niveau de finition</label>
+          <div class="calc-chips" role="group">
+            <button class="calc-chip active" id="chip-eco" onclick="setChip('eco')" type="button">Classique</button>
+            <button class="calc-chip" id="chip-mid" onclick="setChip('mid')" type="button">Premium</button>
+            <button class="calc-chip" id="chip-lux" onclick="setChip('lux')" type="button">Luxe</button>
+          </div>
+        </div>
+        <div class="calc-result">
+          <div class="calc-result-label">Estimation indicative</div>
+          <div class="calc-result-value" id="calc-result">3 200 – 4 800 €</div>
+          <div class="calc-result-note">Hors main d'œuvre si non précisé · Estimation non contractuelle</div>
+        </div>
+        <button class="btn-primary" style="width:100%;margin-top:var(--space-md);" onclick="showPage('contact')">
+          <i data-lucide="send" class="btn-icon"></i>
+          Obtenir un vrai devis gratuit
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <div class="wave-divider" aria-hidden="true" style="transform: rotate(180deg); margin-bottom: -1px;">
+    <svg viewBox="0 0 1440 50" preserveAspectRatio="none" height="50">
+      <path d="M0,25 C480,0 960,50 1440,25 L1440,50 L0,50 Z" fill="#fff"/>
+    </svg>
+  </div>
+  <section class="testimonials-section" id="testimonials-section">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <span class="section-tag">Avis clients</span>
+        <h2 class="section-title">Ce que disent nos <span>clients</span></h2>
+        <p class="section-desc">Des particuliers satisfaits partout dans les Yvelines. La confiance se construit chantier après chantier.</p>
+      </div>
+      <div class="testimonials-track-wrapper fade-in">
+        <div class="testimonials-track" id="testimonials-track">
+          <!-- Généré par JS -->
+        </div>
+      </div>
+      <div class="testimonials-nav">
+        <button class="t-btn" id="t-prev" aria-label="Témoignage précédent">
+          <i data-lucide="chevron-left" style="width:18px;height:18px;"></i>
+        </button>
+        <div class="testimonials-dots" id="testimonials-dots"></div>
+        <button class="t-btn" id="t-next" aria-label="Témoignage suivant">
+          <i data-lucide="chevron-right" style="width:18px;height:18px;"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  <div class="wave-divider" aria-hidden="true" style="margin-top: -1px;">
+    <svg viewBox="0 0 1440 50" preserveAspectRatio="none" height="50">
+      <path d="M0,25 C480,50 960,0 1440,25 L1440,50 L0,50 Z" fill="#fff"/>
+    </svg>
+  </div>
+
+  <!-- Timeline Notre processus -->
+  <section class="section timeline-section">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <span class="section-tag">Comment ça marche</span>
+        <h2 class="section-title">Notre <span>processus</span> en 4 étapes</h2>
+        <p class="section-desc">Un accompagnement clair et transparent, du premier contact jusqu'à la livraison de votre chantier.</p>
+      </div>
+      <div class="timeline" id="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-line-fill" id="timeline-fill"></div>
+
+        <div class="timeline-step fade-in">
+          <div class="timeline-content">
+            <i data-lucide="phone-call" class="timeline-icon" style="color:var(--rouge);"></i>
+            <h3>Prise de contact &amp; écoute</h3>
+            <p>Vous nous contactez par téléphone, WhatsApp ou formulaire. Nous écoutons votre projet et convenons d'un rendez-vous sur place.</p>
+          </div>
+          <div class="timeline-dot" style="background:linear-gradient(135deg,var(--rouge),var(--rouge-dark));">1</div>
+          <div style="width:calc(50% - 52px);"></div>
+        </div>
+
+        <div class="timeline-step fade-in">
+          <div style="width:calc(50% - 52px);"></div>
+          <div class="timeline-dot" style="background:linear-gradient(135deg,#D4A017,#A37B12);">2</div>
+          <div class="timeline-content">
+            <i data-lucide="clipboard-list" class="timeline-icon" style="color:#D4A017;"></i>
+            <h3>Visite &amp; devis gratuit</h3>
+            <p>Nous venons sur site pour évaluer les travaux. Un devis détaillé et transparent vous est remis sous 48h, sans engagement.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step fade-in">
+          <div class="timeline-content">
+            <i data-lucide="hard-hat" class="timeline-icon" style="color:var(--bleu);"></i>
+            <h3>Réalisation des travaux</h3>
+            <p>Nos équipes interviennent selon le planning convenu. Chantier propre, matériaux de qualité, respect des délais contractuels.</p>
+          </div>
+          <div class="timeline-dot" style="background:linear-gradient(135deg,var(--bleu),var(--bleu-dark));">3</div>
+          <div style="width:calc(50% - 52px);"></div>
+        </div>
+
+        <div class="timeline-step fade-in">
+          <div style="width:calc(50% - 52px);"></div>
+          <div class="timeline-dot" style="background:linear-gradient(135deg,#16a34a,#166534);">4</div>
+          <div class="timeline-content">
+            <i data-lucide="check-circle" class="timeline-icon" style="color:#16a34a;"></i>
+            <h3>Livraison &amp; satisfaction</h3>
+            <p>Visite de réception avec le client. Nous ne partons pas tant que vous n'êtes pas 100% satisfait du résultat.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNIÈRE ROUGE -->
+  <div class="red-banner">
+    <div class="red-banner-inner">
+      <div>
+        <h2>Besoin d'un artisan fiable et disponible ?</h2>
+        <p>Devis gratuit sous 48h · Zone d'intervention : Plaisir, Versailles, Saint-Germain-en-Laye et toutes les Yvelines</p>
+      </div>
+      <button class="btn-white" id="banner-cta" onclick="showPage('contact')">
+        <i data-lucide="phone" class="btn-icon"></i>
+        Nous contacter
+      </button>
+    </div>
+  </div>
+
+  <!-- POURQUOI NOUS -->
+  <section class="section" style="background: var(--blanc);">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <span class="section-tag">Engagements</span>
+        <h2 class="section-title">Pourquoi choisir <span>Christophe POLLET</span> ?</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in" id="why-experience">
+          <div class="card-glow"></div>
+          <div class="service-icon" style="background: linear-gradient(135deg, #D4A017, #A37B12); box-shadow: 0 4px 16px rgba(212,160,23,0.35);">
+            <i data-lucide="award" class="svc-icon"></i>
+          </div>
+          <h3>Expérience &amp; Expertise</h3>
+          <p>Plus de 20 ans dans le métier. Un savoir-faire artisanal transmis avec passion sur chaque chantier.</p>
+        </div>
+        <div class="service-card fade-in" id="why-local">
+          <div class="card-glow"></div>
+          <div class="service-icon" style="background: linear-gradient(135deg, #16a34a, #166534); box-shadow: 0 4px 16px rgba(22,163,74,0.35);">
+            <i data-lucide="map-pin" class="svc-icon"></i>
+          </div>
+          <h3>Artisan Local</h3>
+          <p>Basé à Plaisir (78370), nous intervenons rapidement dans toutes les Yvelines. Réactif et disponible.</p>
+        </div>
+        <div class="service-card fade-in" id="why-quality">
+          <div class="card-glow"></div>
+          <div class="service-icon" style="background: linear-gradient(135deg, #7C3AED, #5B21B6); box-shadow: 0 4px 16px rgba(124,58,237,0.35);">
+            <i data-lucide="shield-check" class="svc-icon"></i>
+          </div>
+          <h3>Qualité Garantie</h3>
+          <p>Matériaux sélectionnés, finitions soignées, respect des délais. Votre satisfaction est notre priorité.</p>
+        </div>
+        <div class="service-card fade-in" id="why-devis">
+          <div class="card-glow"></div>
+          <div class="service-icon" style="background: linear-gradient(135deg, #EA580C, #9A3412); box-shadow: 0 4px 16px rgba(234,88,12,0.35);">
+            <i data-lucide="file-check" class="svc-icon"></i>
+          </div>
+          <h3>Devis Gratuit &amp; Rapide</h3>
+          <p>Demande en ligne ou par téléphone, réponse sous 48h. Transparence totale sur les prix.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <span class="section-tag">Questions fréquentes</span>
+        <h2 class="section-title">Vous avez des <span>questions</span> ?</h2>
+        <p class="section-desc">Tout ce qu'il faut savoir avant de démarrer vos travaux avec nous.</p>
+      </div>
+      <div class="faq-list" id="faq-list">
+        <!-- Généré par JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BOTTOM -->
+  <section class="section" style="background: var(--beige);">
+    <div class="section-inner text-center fade-in">
+      <span class="section-tag">Contact</span>
+      <h2 class="section-title" style="margin-top: var(--space-md);">Prêt à démarrer votre <span>projet</span> ?</h2>
+      <p class="section-desc" style="margin-bottom: var(--space-xl);">Contactez-nous dès aujourd'hui pour un devis gratuit et sans engagement.</p>
+      <div style="display:flex; gap:var(--space-md); justify-content:center; flex-wrap:wrap;">
+        <a href="tel:0633551422" class="btn-primary" id="cta-tel">
+          <i data-lucide="phone" class="btn-icon"></i>
+          06 33 55 14 22
+        </a>
+        <button class="btn-blue" id="cta-form" onclick="showPage('contact')">
+          <i data-lucide="send" class="btn-icon"></i>
+          Formulaire de devis
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-accueil -->
+
+
+<!-- ══════════════════════════════════════════════════
+     PAGE : PRESTATIONS
+══════════════════════════════════════════════════ -->
+<div class="page" id="page-prestations">
+  <div class="page-header">
+    <div class="page-header-checker"></div>
+    <div class="page-header-content">
+      <h1>Nos Prestations</h1>
+      <p>Maçonnerie, rénovation, terrasses et ravalement — des travaux d'excellence dans toutes les Yvelines.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="prestation-item fade-in">
+        <div class="prestation-image">
+          <img src="assets/apresbarriere.jpg" alt="Clôture et maçonnerie béton rénovée" loading="lazy"/>
+        </div>
+        <div class="prestation-content">
+          <div class="prestation-number">01</div>
+          <h2>Maçonnerie Générale</h2>
+          <p>De la construction neuve à la réparation, nous réalisons tous types de travaux de maçonnerie avec soin et précision, en utilisant des matériaux de qualité adaptés à votre projet.</p>
+          <ul class="prestation-list">
+            <li>Construction de murs porteurs et de clôtures</li>
+            <li>Réalisation de fondations et dalles béton</li>
+            <li>Pose d'escaliers en pierre naturelle</li>
+            <li>Création d'ouvertures (portes, fenêtres)</li>
+            <li>Reprises en sous-œuvre</li>
+          </ul>
+          <button class="btn-primary btn-sm" id="prest-mac-cta" onclick="showPage('contact')">Demander un devis</button>
+        </div>
+      </div>
+
+      <div class="prestation-item reverse fade-in">
+        <div class="prestation-image">
+          <img src="assets/aprescave.jpg" alt="Rénovation sol béton et évacuation d'eau" loading="lazy"/>
+        </div>
+        <div class="prestation-content">
+          <div class="prestation-number">02</div>
+          <h2>Rénovation Complète</h2>
+          <p>Nous prenons en charge la rénovation de votre maison de A à Z. Qu'il s'agisse d'une remise à neuf globale ou de travaux ciblés, notre expérience garantit un résultat impeccable.</p>
+          <ul class="prestation-list">
+            <li>Rénovation de façades et murs extérieurs</li>
+            <li>Consolidation de structure existante</li>
+            <li>Pose de linteaux et chaînages</li>
+            <li>Reprise de charpente maçonnée</li>
+            <li>Assainissement et drainage</li>
+          </ul>
+          <button class="btn-primary btn-sm" id="prest-renov-cta" onclick="showPage('contact')">Demander un devis</button>
+        </div>
+      </div>
+
+      <div class="prestation-item fade-in">
+        <div class="prestation-image">
+          <img src="assets/apresparking.jpg" alt="Aménagement cour et parking en béton désactivé" loading="lazy"/>
+        </div>
+        <div class="prestation-content">
+          <div class="prestation-number">03</div>
+          <h2>Terrasses &amp; Dallages</h2>
+          <p>Embellissez votre extérieur avec une terrasse réalisée par un artisan qualifié. Nous proposons une large gamme de matériaux pour créer l'espace de vie extérieur de vos rêves.</p>
+          <ul class="prestation-list">
+            <li>Terrasses en pierre naturelle (calcaire, grès, ardoise)</li>
+            <li>Pose de carrelage extérieur antidérapant</li>
+            <li>Dallage en béton désactivé</li>
+            <li>Pavés autobloquants et pavés de récupération</li>
+            <li>Murets de soutènement et bordures</li>
+          </ul>
+          <button class="btn-primary btn-sm" id="prest-terr-cta" onclick="showPage('contact')">Demander un devis</button>
+        </div>
+      </div>
+
+      <div class="prestation-item reverse fade-in">
+        <div class="prestation-image">
+          <img src="assets/apresgrille.jpg" alt="Réfection d'enrobé et scellement grille de voirie" loading="lazy"/>
+        </div>
+        <div class="prestation-content">
+          <div class="prestation-number">04</div>
+          <h2>Ravalement de Pierres</h2>
+          <p>La pierre est un matériau noble qui mérite d'être entretenu et restauré avec expertise. Nous intervenons pour redonner vie à vos façades en pierre naturelle dans le respect des techniques traditionnelles.</p>
+          <ul class="prestation-list">
+            <li>Nettoyage et démoussage de façades</li>
+            <li>Rejointoiement à la chaux naturelle</li>
+            <li>Remplacement de pierres abîmées</li>
+            <li>Traitement hydrofuge</li>
+            <li>Restauration de moulures et corniches</li>
+          </ul>
+          <button class="btn-primary btn-sm" id="prest-rav-cta" onclick="showPage('contact')">Demander un devis</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="red-banner">
+    <div class="red-banner-inner">
+      <div>
+        <h2>Votre projet, notre expertise</h2>
+        <p>Contactez-nous pour un devis gratuit et personnalisé</p>
+      </div>
+      <button class="btn-white" id="prest-banner-cta" onclick="showPage('contact')">Demande de devis →</button>
+    </div>
+  </div>
+</div><!-- /page-prestations -->
+
+
+<!-- ══════════════════════════════════════════════════
+     PAGE : AVANT/APRÈS
+══════════════════════════════════════════════════ -->
+<div class="page" id="page-realisations">
+  <div class="page-header">
+    <div class="page-header-checker"></div>
+    <div class="page-header-content">
+      <h1>Avant / Après</h1>
+      <p>Découvrez nos réalisations. Glissez le curseur pour comparer l'état avant et après nos travaux.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="projects-filter" role="group" aria-label="Filtrer les projets">
+        <button class="filter-btn active" data-filter="all" id="filter-all" onclick="filterProjects('all')">
+          <i data-lucide="layout-grid" class="filter-icon"></i> Tous les projets
+        </button>
+        <button class="filter-btn" data-filter="maconnerie" id="filter-mac" onclick="filterProjects('maconnerie')">
+          <i data-lucide="brick-wall" class="filter-icon"></i> Maçonnerie
+        </button>
+        <button class="filter-btn" data-filter="terrasse" id="filter-terr" onclick="filterProjects('terrasse')">
+          <i data-lucide="layers" class="filter-icon"></i> Terrasses
+        </button>
+        <button class="filter-btn" data-filter="ravalement" id="filter-rav" onclick="filterProjects('ravalement')">
+          <i data-lucide="paintbrush-vertical" class="filter-icon"></i> Ravalement
+        </button>
+        <button class="filter-btn" data-filter="renovation" id="filter-renov" onclick="filterProjects('renovation')">
+          <i data-lucide="hard-hat" class="filter-icon"></i> Rénovation
+        </button>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+  </section>
+</div><!-- /page-realisations -->
+
+
+<!-- ══════════════════════════════════════════════════
+     PAGE : CONTACT / DEVIS
+══════════════════════════════════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="page-header">
+    <div class="page-header-checker"></div>
+    <div class="page-header-content">
+      <h1>Devis Gratuit</h1>
+      <p>Remplissez le formulaire ou appelez-nous directement. Réponse garantie sous 48h.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <div class="contact-card fade-in" id="contact-card-tel">
+            <div class="contact-card-icon"><i data-lucide="phone" class="contact-icon"></i></div>
+            <h3>Téléphone &amp; Fax</h3>
+            <p>Tél / Fax : <a href="tel:0130541742">01 30 54 17 42</a></p>
+            <p>Portable : <a href="tel:0633551422"><strong>06 33 55 14 22</strong></a></p>
+          </div>
+          <div class="contact-card fade-in" id="contact-card-email">
+            <div class="contact-card-icon"><i data-lucide="mail" class="contact-icon"></i></div>
+            <h3>Email</h3>
+            <a href="mailto:pollet.maconnerie@free.fr">pollet.maconnerie@free.fr</a>
+          </div>
+          <div class="contact-card fade-in" id="contact-card-adresse">
+            <div class="contact-card-icon"><i data-lucide="map-pin" class="contact-icon"></i></div>
+            <h3>Adresse</h3>
+            <p>47, rue de Normandie<br/>78370 PLAISIR</p>
+          </div>
+          <div class="contact-card fade-in" id="contact-card-zones">
+            <div class="contact-card-icon"><i data-lucide="map" class="contact-icon"></i></div>
+            <h3>Zone d'intervention</h3>
+            <div class="zones-list">
+              <span class="zone-badge">Plaisir</span>
+              <span class="zone-badge">Versailles</span>
+              <span class="zone-badge">Saint-Germain-en-Laye</span>
+              <span class="zone-badge">Trappes</span>
+              <span class="zone-badge">Élancourt</span>
+              <span class="zone-badge">Maurepas</span>
+              <span class="zone-badge">Les Clayes-sous-Bois</span>
+              <span class="zone-badge">Montigny-le-Bretonneux</span>
+              <span class="zone-badge">Guyancourt</span>
+              <span class="zone-badge">Poissy</span>
+              <span class="zone-badge">Mantes-la-Jolie</span>
+              <span class="zone-badge">Rambouillet</span>
+            </div>
+          </div>
+          <!-- Google Maps -->
+          <div class="contact-card fade-in" id="contact-card-map" style="padding:0;overflow:hidden;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10508.7!2d1.9523!3d48.8234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e680e10d59c75b%3A0x6baa2af28b4a9e8!2sPlaisir%2C%2078370!5e0!3m2!1sfr!2sfr"
+              width="100%" height="220" style="border:0;display:block;border-radius:var(--radius-lg);"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Zone d'intervention - Plaisir, Yvelines"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="devis-form-card fade-in" id="devis-form-card">
+          <h2>Demande de devis</h2>
+          <p class="subtitle">Décrivez votre projet, nous vous répondons sous 48h.</p>
+          <form id="devis-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="f-prenom">Prénom <span class="req">*</span></label>
+                <input type="text" id="f-prenom" name="prenom" placeholder="Jean" autocomplete="given-name"/>
+              </div>
+              <div class="form-group">
+                <label for="f-nom">Nom <span class="req">*</span></label>
+                <input type="text" id="f-nom" name="nom" placeholder="Dupont" autocomplete="family-name"/>
+              </div>
+              <div class="form-group">
+                <label for="f-tel">Téléphone <span class="req">*</span></label>
+                <input type="tel" id="f-tel" name="tel" placeholder="06 XX XX XX XX" autocomplete="tel"/>
+              </div>
+              <div class="form-group">
+                <label for="f-email">Email</label>
+                <input type="email" id="f-email" name="email" placeholder="jean@email.fr" autocomplete="email"/>
+              </div>
+              <div class="form-group">
+                <label for="f-ville">Ville <span class="req">*</span></label>
+                <input type="text" id="f-ville" name="ville" placeholder="Plaisir"/>
+              </div>
+              <div class="form-group">
+                <label for="f-type">Type de travaux <span class="req">*</span></label>
+                <select id="f-type" name="type">
+                  <option value="">-- Sélectionnez --</option>
+                  <option value="Maçonnerie générale">Maçonnerie générale</option>
+                  <option value="Rénovation">Rénovation</option>
+                  <option value="Terrasse / Dallage">Terrasse / Dallage</option>
+                  <option value="Ravalement de pierres">Ravalement de pierres</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="f-message">Description du projet <span class="req">*</span></label>
+                <textarea id="f-message" name="message" placeholder="Décrivez votre projet en quelques lignes : surface approximative, matériaux souhaités, délais envisagés..." maxlength="500"></textarea>
+                <div class="char-counter"><span id="char-count">0</span> / 500 caractères</div>
+              </div>
+            </div>
+            <button type="submit" class="btn-submit" id="btn-submit-devis">
+              <i data-lucide="send" class="btn-icon"></i>
+              Envoyer ma demande de devis
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div><!-- /page-contact -->
+
+
+<!-- ══════════════════════════════════════════════════
+     PAGE : ADMIN
+══════════════════════════════════════════════════ -->
+<div class="page" id="page-admin">
+  <div class="admin-header">
+    <div class="admin-header-inner">
+      <div class="admin-title">
+        <span class="admin-badge">Espace Administrateur</span>
+        <h1>Tableau de bord</h1>
+        <p>Gérez vos chantiers, photos et demandes de devis</p>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn-outline" id="admin-logout" onclick="logoutAdmin()" style="color:#fff; border-color:rgba(255,255,255,0.4);">
+          <i data-lucide="log-out" class="btn-icon"></i> Déconnexion
+        </button>
+        <button class="btn-outline" onclick="showPage('accueil')" style="color:#fff; border-color:rgba(255,255,255,0.4);">
+          <i data-lucide="arrow-left" class="btn-icon"></i> Retour au site
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-body">
+    <div class="admin-stats">
+      <div class="admin-stat-card" id="stat-projets">
+        <div class="admin-stat-number" id="stat-nb-projets">—</div>
+        <div class="admin-stat-label">Chantiers publiés</div>
+      </div>
+      <div class="admin-stat-card blue" id="stat-devis">
+        <div class="admin-stat-number" id="stat-nb-devis">—</div>
+        <div class="admin-stat-label">Demandes de devis</div>
+      </div>
+      <div class="admin-stat-card green" id="stat-traite">
+        <div class="admin-stat-number" id="stat-nb-traite">—</div>
+        <div class="admin-stat-label">Devis traités</div>
+      </div>
+      <div class="admin-stat-card orange" id="stat-new">
+        <div class="admin-stat-number" id="stat-nb-new">—</div>
+        <div class="admin-stat-label">Nouveaux messages</div>
+      </div>
+    </div>
+
+    <div class="admin-tabs" role="tablist">
+      <button class="admin-tab active" id="tab-devis" role="tab" onclick="switchAdminTab('devis')">
+        <i data-lucide="clipboard-list" class="tab-icon"></i> Demandes de devis
+      </button>
+      <button class="admin-tab" id="tab-chantiers" role="tab" onclick="switchAdminTab('chantiers')">
+        <i data-lucide="image" class="tab-icon"></i> Gestion chantiers
+      </button>
+      <button class="admin-tab" id="tab-add" role="tab" onclick="switchAdminTab('add')">
+        <i data-lucide="plus-circle" class="tab-icon"></i> Ajouter un chantier
+      </button>
+    </div>
+
+    <div class="admin-panel active" id="panel-devis" role="tabpanel">
+      <div class="admin-table-wrapper">
+        <table class="admin-table" id="devis-table">
+          <thead>
+            <tr>
+              <th>Date</th><th>Nom</th><th>Téléphone</th>
+              <th>Ville</th><th>Type de travaux</th><th>Statut</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="devis-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="admin-panel" id="panel-chantiers" role="tabpanel">
+      <div class="admin-projects-grid" id="admin-projects-grid"></div>
+    </div>
+
+    <div class="admin-panel" id="panel-add" role="tabpanel">
+      <div class="add-project-card">
+        <h3>
+          <i data-lucide="plus-circle" style="width:20px;height:20px;"></i>
+          Nouveau chantier Avant / Après
+        </h3>
+        <form id="add-project-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="ap-titre">Titre du chantier <span class="req">*</span></label>
+              <input type="text" id="ap-titre" placeholder="Ex: Ravalement façade - Versailles"/>
+            </div>
+            <div class="form-group">
+              <label for="ap-categorie">Catégorie <span class="req">*</span></label>
+              <select id="ap-categorie">
+                <option value="">-- Choisir --</option>
+                <option value="maconnerie">Maçonnerie</option>
+                <option value="terrasse">Terrasse</option>
+                <option value="ravalement">Ravalement</option>
+                <option value="renovation">Rénovation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ap-ville">Ville</label>
+              <input type="text" id="ap-ville" placeholder="Ex: Plaisir (78370)"/>
+            </div>
+            <div class="form-group">
+              <label for="ap-date">Date de réalisation</label>
+              <input type="month" id="ap-date"/>
+            </div>
+            <div class="form-group full">
+              <label for="ap-desc">Description</label>
+              <textarea id="ap-desc" style="min-height:80px;" placeholder="Décrivez les travaux réalisés..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="ap-avant-url">URL image AVANT</label>
+              <input type="text" id="ap-avant-url" placeholder="assets/before_mur.png"/>
+            </div>
+            <div class="form-group">
+              <label for="ap-apres-url">URL image APRÈS</label>
+              <input type="text" id="ap-apres-url" placeholder="assets/after_mur.png"/>
+            </div>
+          </div>
+          <button type="submit" class="btn-blue" id="btn-add-project">
+            <i data-lucide="plus" class="btn-icon"></i>
+            Ajouter ce chantier
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div><!-- /page-admin -->
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-checker"></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo" style="pointer-events:none;">
+        <svg width="40" height="40" viewBox="0 0 60 60" fill="none">
+          <rect width="60" height="60" rx="12" fill="#D42B27" fill-opacity="0.15"/>
+          <path d="M10 32 L30 14 L50 32" stroke="#D42B27" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="18" y="31" width="24" height="17" rx="1" stroke="#D42B27" stroke-width="2.5" fill="none"/>
+          <rect x="26" y="38" width="8" height="10" rx="1" stroke="#D42B27" stroke-width="2" fill="none"/>
+          <rect x="40" y="19" width="5" height="8" stroke="#D42B27" stroke-width="2" fill="none"/>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-name" style="font-size:1.2rem;">Christophe POLLET</span>
+          <span class="logo-tagline">Maçonnerie · Rénovation · Plaisir 78</span>
+        </div>
+      </div>
+      <p>Artisan maçon installé à Plaisir dans les Yvelines (78370). Plus de 20 ans d'expérience au service de votre habitat. Qualité, sérieux et réactivité.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Prestations</h4>
+      <ul>
+        <li><a onclick="showPage('prestations')">Maçonnerie Générale</a></li>
+        <li><a onclick="showPage('prestations')">Rénovation</a></li>
+        <li><a onclick="showPage('prestations')">Terrasses &amp; Dallages</a></li>
+        <li><a onclick="showPage('prestations')">Ravalement de Pierres</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>47, rue de Normandie</li>
+        <li>78370 PLAISIR</li>
+        <li><a href="tel:0130541742">01 30 54 17 42</a></li>
+        <li><a href="tel:0633551422">06 33 55 14 22</a></li>
+        <li><a href="mailto:pollet.maconnerie@free.fr">pollet.maconnerie@free.fr</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Christophe POLLET – Tous droits réservés</span>
+    <span>Artisan Maçon · Plaisir (78370) · Yvelines</span>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/33633551422?text=Bonjour%20Christophe%2C%20je%20souhaite%20un%20devis%20pour%20des%20travaux%20de%20ma%C3%A7onnerie." id="fab-whatsapp" target="_blank" rel="noopener" aria-label="Contacter par WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<!-- Floating Phone Button -->
+<a href="tel:0633551422" id="fab-phone" aria-label="Appeler Christophe POLLET">
+  <i data-lucide="phone" style="width:22px;height:22px;"></i>
+</a>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Retour en haut de page" onclick="scrollToTop()">
+  <i data-lucide="arrow-up" style="width:20px;height:20px;"></i>
+</button>
+
+<!-- Lightbox -->
+<div id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image en plein écran">
+  <button id="lightbox-close" aria-label="Fermer" onclick="closeLightbox()">
+    <i data-lucide="x" style="width:18px;height:18px;"></i>
+  </button>
+  <button id="lightbox-prev" aria-label="Image précédente" onclick="lightboxNav(-1)">
+    <i data-lucide="chevron-left" style="width:22px;height:22px;"></i>
+  </button>
+  <img id="lightbox-img" src="" alt="" />
+  <button id="lightbox-next" aria-label="Image suivante" onclick="lightboxNav(1)">
+    <i data-lucide="chevron-right" style="width:22px;height:22px;"></i>
+  </button>
+  <div id="lightbox-caption"></div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" aria-modal="true" role="dialog" aria-labelledby="modal-title">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">Modifier le statut</h2>
+      <button class="modal-close" id="modal-close-btn" onclick="closeModal()" aria-label="Fermer">
+        <i data-lucide="x" style="width:16px;height:16px;"></i>
+      </button>
+    </div>
+    <div class="form-group" style="margin-bottom:var(--space-md);">
+      <label for="modal-statut">Statut de la demande</label>
+      <select id="modal-statut">
+        <option value="new">Nouveau</option>
+        <option value="contacted">Contacté</option>
+        <option value="done">Traité</option>
+        <option value="closed">Clôturé</option>
+      </select>
+    </div>
+    <div style="display:flex; gap:var(--space-sm); justify-content:flex-end;">
+      <button class="btn-outline btn-sm" id="modal-cancel" onclick="closeModal()">Annuler</button>
+      <button class="btn-primary btn-sm" id="modal-save" onclick="saveStatus()">Sauvegarder</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="alert" aria-live="polite">
+  <i data-lucide="check-circle" id="toast-icon-el" style="width:18px;height:18px;flex-shrink:0;"></i>
+  <span id="toast-msg">Message</span>
+</div>
+
+<!-- MODAL CADENAS ADMIN -->
+<div class="modal-overlay" id="admin-auth-modal" aria-modal="true" role="dialog" aria-labelledby="admin-auth-title">
+  <div class="modal" style="max-width: 420px; text-align: center; padding: 2.2rem;">
+    <div style="width: 58px; height: 58px; background: rgba(212,43,39,0.1); color: var(--rouge); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+      <i data-lucide="lock" style="width: 28px; height: 28px;"></i>
+    </div>
+    <h2 id="admin-auth-title" style="font-family:'Outfit',sans-serif; font-size:1.35rem; font-weight:800; color:var(--bleu-dark); margin-bottom:8px;">Accès Administrateur</h2>
+    <p style="font-size:0.88rem; color:var(--gris-mid); margin-bottom:20px; line-height:1.45;">Veuillez saisir votre mot de passe pour accéder à la gestion des devis et des chantiers.</p>
+    <form id="admin-auth-form" onsubmit="handleAdminAuth(event)">
+      <div style="margin-bottom:18px; text-align:left;">
+        <label for="admin-pass-input" style="display:block; font-size:0.82rem; font-weight:700; color:var(--bleu-dark); margin-bottom:6px;">Mot de passe</label>
+        <input type="password" id="admin-pass-input" placeholder="Saisir le mot de passe..." autocomplete="current-password" style="width:100%; padding:12px 16px; border:1.5px solid var(--beige-mid); border-radius:8px; font-size:0.95rem; outline:none; background:var(--beige); transition:border-color 0.2s;"/>
+        <div id="admin-auth-error" style="display:none; color:var(--rouge); font-size:0.82rem; margin-top:8px; font-weight:600;">
+          <i data-lucide="alert-circle" style="width:14px;height:14px;display:inline-block;vertical-align:-2px;margin-right:4px;"></i> Mot de passe incorrect
+        </div>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button type="button" class="btn-outline btn-sm" style="flex:1;" onclick="closeAdminAuthModal()">Annuler</button>
+        <button type="submit" class="btn-primary btn-sm" style="flex:1;">Connexion</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<canvas id="confetti-canvas" aria-hidden="true"></canvas>
+<script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  });
+  window._lucideRefresh = function() {
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  };
+</script>
+</body>
+</html>
