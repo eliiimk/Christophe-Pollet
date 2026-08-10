@@ -41,5 +41,4 @@ Christophe-Pollet/
 ## 🔒 Espace Administrateur
 
 - **Accès :** Onglet *Admin* dans la barre de navigation.
-- **Mot de passe :** `pollet`
-- **Fonctionnalités :** Suivi des demandes de devis, statistiques et publication de nouvelles réalisations.
+- **Fonctionnalités :** Suivi des demandes de devis, statistiques et publication de nouvelles réalisations (accès réservé).
