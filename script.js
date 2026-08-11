@@ -1301,7 +1301,7 @@ function renderAdminAvis() {
 
   if (filtered.length === 0) {
     list.innerHTML = `<div style="text-align:center; padding:40px; color:var(--gris-mid); font-size:1rem;">
-      ${_avisFilter === 'pending' ? '✅ Aucun avis en attente.' : '📭 Aucun avis publié pour le moment.'}
+      ${_avisFilter === 'pending' ? 'Aucun avis en attente.' : 'Aucun avis publié pour le moment.'}
     </div>`;
     return;
   }
@@ -1327,15 +1327,15 @@ function renderAdminAvis() {
         <div style="display:flex; flex-direction:column; gap:8px; flex-shrink:0;">
           ${_avisFilter === 'pending' ? `
             <button onclick="approveAvis('${a.id}')" style="background:linear-gradient(135deg,#25d366,#1ea855); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-weight:700; font-size:0.82rem; cursor:pointer; display:flex; align-items:center; gap:6px;">
-              ✅ Valider & Publier
+              Valider & Publier
             </button>
           ` : `
             <button onclick="unpublishAvis('${a.id}')" style="background:rgba(0,0,0,0.07); color:var(--gris-texte); border:none; border-radius:8px; padding:8px 16px; font-weight:600; font-size:0.82rem; cursor:pointer;">
-              ↩ Dépublier
+              Dépublier
             </button>
           `}
           <button onclick="deleteAvis('${a.id}')" style="background:rgba(212,43,39,0.1); color:var(--rouge); border:none; border-radius:8px; padding:8px 16px; font-weight:700; font-size:0.82rem; cursor:pointer;">
-            🗑 Supprimer
+            Supprimer
           </button>
         </div>
       </div>
@@ -1352,7 +1352,7 @@ function approveAvis(id) {
   refreshTestimonialsFromAvis();
   updateAvisBadge();
   renderAdminAvis();
-  showToast('✅ Avis publié dans la section témoignages !');
+  showToast('Avis publié dans la section témoignages !');
 }
 
 // --- Dépublier un avis
@@ -1364,7 +1364,7 @@ function unpublishAvis(id) {
   refreshTestimonialsFromAvis();
   updateAvisBadge();
   renderAdminAvis();
-  showToast('↩ Avis remis en attente.', false);
+  showToast('Avis remis en attente.', false);
 }
 
 // --- Supprimer un avis
@@ -1374,7 +1374,7 @@ function deleteAvis(id) {
   refreshTestimonialsFromAvis();
   updateAvisBadge();
   renderAdminAvis();
-  showToast('🗑 Avis supprimé.', true);
+  showToast('Avis supprimé.', true);
 }
 
 // --- Mettre à jour le carrousel testimonials avec les avis approuvés
