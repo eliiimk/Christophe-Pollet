@@ -1096,6 +1096,9 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 .project-location { font-size: 0.8rem; color: var(--gris-clair); display: flex; align-items: center; gap: 4px; }
 
 /* Comparison slider */
+.comparison-wrapper {
+  position: relative;
+}
 .comparison-container {
   position: relative;
   aspect-ratio: 16/9;

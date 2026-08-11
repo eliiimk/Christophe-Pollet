@@ -531,14 +531,16 @@ function createProjectCardHTML(p) {
         Réalisation
       </div>
     </div>` : `
-    <div class="comparison-container" data-active="false">
-      <img class="comparison-img after-img-bg" src="${p.apres}" alt="Après – ${escapeHTML(p.titre)}" loading="lazy"/>
-      <img class="comparison-img before-img-top" src="${p.avant}" alt="Avant – ${escapeHTML(p.titre)}" loading="lazy"/>
-      <div class="comparison-handle">
-        <div class="comparison-handle-btn">⟺</div>
+    <div class="comparison-wrapper">
+      <div class="comparison-container" data-active="false">
+        <img class="comparison-img after-img-bg" src="${p.apres}" alt="Après – ${escapeHTML(p.titre)}" loading="lazy"/>
+        <img class="comparison-img before-img-top" src="${p.avant}" alt="Avant – ${escapeHTML(p.titre)}" loading="lazy"/>
+        <div class="comparison-handle">
+          <div class="comparison-handle-btn">⟺</div>
+        </div>
       </div>
-      <span class="comparison-badge badge-avant" style="position:absolute; top:12px; left:12px; z-index:99; background:#D42B27 !important; color:#ffffff !important; font-size:0.75rem; font-weight:800; padding:6px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.08em; box-shadow:0 4px 12px rgba(0,0,0,0.4); pointer-events:none; font-family:'Outfit',sans-serif;">Avant</span>
-      <span class="comparison-badge badge-apres" style="position:absolute; top:12px; right:12px; z-index:99; background:#1B6CA8 !important; color:#ffffff !important; font-size:0.75rem; font-weight:800; padding:6px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.08em; box-shadow:0 4px 12px rgba(0,0,0,0.4); pointer-events:none; font-family:'Outfit',sans-serif;">Après</span>
+      <span style="position:absolute; top:10px; left:12px; z-index:99; background:#D42B27; color:#ffffff; font-size:0.75rem; font-weight:800; padding:5px 13px; border-radius:50px; text-transform:uppercase; letter-spacing:0.06em; box-shadow:0 3px 10px rgba(0,0,0,0.35); pointer-events:none;">Avant</span>
+      <span style="position:absolute; top:10px; right:12px; z-index:99; background:#1B6CA8; color:#ffffff; font-size:0.75rem; font-weight:800; padding:5px 13px; border-radius:50px; text-transform:uppercase; letter-spacing:0.06em; box-shadow:0 3px 10px rgba(0,0,0,0.35); pointer-events:none;">Après</span>
     </div>`;
 
   return `
