@@ -537,8 +537,8 @@ function createProjectCardHTML(p) {
       <div class="comparison-handle">
         <div class="comparison-handle-btn">⟺</div>
       </div>
-      <span class="comparison-badge badge-avant">Avant</span>
-      <span class="comparison-badge badge-apres">Après</span>
+      <span class="comparison-badge badge-avant" style="position:absolute; top:12px; left:12px; z-index:99; background:#D42B27 !important; color:#ffffff !important; font-size:0.75rem; font-weight:800; padding:6px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.08em; box-shadow:0 4px 12px rgba(0,0,0,0.4); pointer-events:none; font-family:'Outfit',sans-serif;">Avant</span>
+      <span class="comparison-badge badge-apres" style="position:absolute; top:12px; right:12px; z-index:99; background:#1B6CA8 !important; color:#ffffff !important; font-size:0.75rem; font-weight:800; padding:6px 14px; border-radius:50px; text-transform:uppercase; letter-spacing:0.08em; box-shadow:0 4px 12px rgba(0,0,0,0.4); pointer-events:none; font-family:'Outfit',sans-serif;">Après</span>
     </div>`;
 
   return `
