@@ -2297,3 +2297,44 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   z-index: 9999;
   display: none;
 }
+
+/* ================================================================
+   AVIS FORM & STAR RATING
+   ================================================================ */
+.avis-form-section {
+  background: var(--beige-light, #faf8f4);
+  padding-bottom: var(--space-xl);
+}
+.avis-form {
+  background: var(--blanc);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid var(--beige-mid, #e0d9cc);
+}
+
+/* Interactive star rating */
+.star-rating {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #d1cdc7;
+  cursor: pointer;
+  transition: color 0.15s, transform 0.15s;
+  padding: 0;
+  line-height: 1;
+}
+.star-btn:hover,
+.star-btn.active {
+  color: #FACC15;
+  transform: scale(1.15);
+}
+@media (max-width: 768px) {
+  .avis-form { padding: var(--space-lg) var(--space-md); }
+  .star-btn { font-size: 1.7rem; }
+}

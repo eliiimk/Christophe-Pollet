@@ -1205,3 +1205,237 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   calcUpdate();
 });
+
+/* ────────────────────────────────────────────────────────────────
+   SYSTÈME D'AVIS CLIENTS
+──────────────────────────────────────────────────────────────── */
+
+// --- État
+let avisEntries = JSON.parse(localStorage.getItem('cp_avis') || '[]');
+let currentAvisFilter = 'pending';
+let currentStarRating = 0;
+
+function saveAvis() {
+  localStorage.setItem('cp_avis', JSON.stringify(avisEntries));
+}
+
+// --- Étoiles interactives
+function setStarRating(val) {
+  currentStarRating = val;
+  document.getElementById('avis-note').value = val;
+  document.querySelectorAll('.star-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', i < val);
+  });
+}
+
+// --- Soumission du formulaire côté client
+function submitAvis(e) {
+  e.preventDefault();
+  const nom = document.getElementById('avis-nom').value.trim();
+  const ville = document.getElementById('avis-ville').value.trim();
+  const note = parseInt(document.getElementById('avis-note').value);
+  const text = document.getElementById('avis-text').value.trim();
+
+  if (!nom || !text) {
+    showToast('Merci de remplir votre nom et votre avis.', true);
+    return;
+  }
+  if (note < 1) {
+    showToast('Merci de choisir une note en étoiles.', true);
+    return;
+  }
+
+  const entry = {
+    id: 'av_' + Date.now(),
+    nom,
+    ville: ville || 'Yvelines (78)',
+    note,
+    text,
+    date: new Date().toLocaleDateString('fr-FR'),
+    status: 'pending'
+  };
+  avisEntries.unshift(entry);
+  saveAvis();
+  updateAvisBadge();
+
+  // Reset form
+  document.getElementById('avis-submit-form').reset();
+  setStarRating(0);
+  document.getElementById('avis-success').style.display = 'block';
+  setTimeout(() => { document.getElementById('avis-success').style.display = 'none'; }, 5000);
+}
+
+// --- Badge rouge sur onglet Admin avis
+function updateAvisBadge() {
+  const pending = avisEntries.filter(a => a.status === 'pending').length;
+  const badge = document.getElementById('avis-badge');
+  if (!badge) return;
+  if (pending > 0) {
+    badge.style.display = 'inline-block';
+    badge.textContent = pending;
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+// --- Filtre admin avis
+let _avisFilter = 'pending';
+function switchAvisFilter(filter) {
+  _avisFilter = filter;
+  document.getElementById('avis-filter-pending').style.cssText =
+    filter === 'pending'
+      ? 'border-color:var(--rouge);color:var(--rouge);font-weight:700;'
+      : '';
+  document.getElementById('avis-filter-approved').style.cssText =
+    filter === 'approved'
+      ? 'border-color:#1B6CA8;color:#1B6CA8;font-weight:700;'
+      : '';
+  renderAdminAvis();
+}
+
+// --- Rendu des avis côté admin
+function renderAdminAvis() {
+  const list = document.getElementById('admin-avis-list');
+  if (!list) return;
+  const filtered = avisEntries.filter(a => a.status === _avisFilter);
+
+  if (filtered.length === 0) {
+    list.innerHTML = `<div style="text-align:center; padding:40px; color:var(--gris-mid); font-size:1rem;">
+      ${_avisFilter === 'pending' ? '✅ Aucun avis en attente.' : '📭 Aucun avis publié pour le moment.'}
+    </div>`;
+    return;
+  }
+
+  const stars = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
+
+  list.innerHTML = filtered.map(a => `
+    <div class="admin-avis-card" id="avis-card-${a.id}" style="background:var(--beige-light,#faf8f4); border:1.5px solid var(--beige-mid,#e0d9cc); border-radius:14px; padding:18px 22px; margin-bottom:14px; transition:box-shadow 0.2s;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--rouge),var(--rouge-dark,#a01f1b));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;">
+              ${escapeHTML(a.nom.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase())}
+            </div>
+            <div>
+              <strong style="color:var(--bleu-dark); font-size:0.95rem;">${escapeHTML(a.nom)}</strong>
+              <div style="font-size:0.78rem; color:var(--gris-mid);">${escapeHTML(a.ville)} · ${a.date}</div>
+            </div>
+          </div>
+          <div style="color:#FACC15; font-size:1.2rem; margin-bottom:8px;">${stars(a.note)}</div>
+          <p style="color:var(--gris-texte); font-size:0.9rem; line-height:1.55; margin:0;">"${escapeHTML(a.text)}"</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; flex-shrink:0;">
+          ${_avisFilter === 'pending' ? `
+            <button onclick="approveAvis('${a.id}')" style="background:linear-gradient(135deg,#25d366,#1ea855); color:#fff; border:none; border-radius:8px; padding:8px 16px; font-weight:700; font-size:0.82rem; cursor:pointer; display:flex; align-items:center; gap:6px;">
+              ✅ Valider & Publier
+            </button>
+          ` : `
+            <button onclick="unpublishAvis('${a.id}')" style="background:rgba(0,0,0,0.07); color:var(--gris-texte); border:none; border-radius:8px; padding:8px 16px; font-weight:600; font-size:0.82rem; cursor:pointer;">
+              ↩ Dépublier
+            </button>
+          `}
+          <button onclick="deleteAvis('${a.id}')" style="background:rgba(212,43,39,0.1); color:var(--rouge); border:none; border-radius:8px; padding:8px 16px; font-weight:700; font-size:0.82rem; cursor:pointer;">
+            🗑 Supprimer
+          </button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// --- Approuver un avis (le publier dans le carrousel)
+function approveAvis(id) {
+  const idx = avisEntries.findIndex(a => a.id === id);
+  if (idx === -1) return;
+  avisEntries[idx].status = 'approved';
+  saveAvis();
+  // Inject into live testimonials
+  refreshTestimonialsFromAvis();
+  updateAvisBadge();
+  renderAdminAvis();
+  showToast('✅ Avis publié dans la section témoignages !');
+}
+
+// --- Dépublier un avis
+function unpublishAvis(id) {
+  const idx = avisEntries.findIndex(a => a.id === id);
+  if (idx === -1) return;
+  avisEntries[idx].status = 'pending';
+  saveAvis();
+  refreshTestimonialsFromAvis();
+  updateAvisBadge();
+  renderAdminAvis();
+  showToast('↩ Avis remis en attente.', false);
+}
+
+// --- Supprimer un avis
+function deleteAvis(id) {
+  avisEntries = avisEntries.filter(a => a.id !== id);
+  saveAvis();
+  refreshTestimonialsFromAvis();
+  updateAvisBadge();
+  renderAdminAvis();
+  showToast('🗑 Avis supprimé.', true);
+}
+
+// --- Mettre à jour le carrousel testimonials avec les avis approuvés
+function refreshTestimonialsFromAvis() {
+  const approved = avisEntries.filter(a => a.status === 'approved');
+  // Merge with base testimonials (base ones always included)
+  const combined = [...approved.map(a => ({
+    name: a.nom,
+    ville: a.ville,
+    note: a.note,
+    text: a.text
+  })), ...TESTIMONIALS];
+  // Temporarily replace the rendered track
+  const track = document.getElementById('testimonials-track');
+  const dotsEl = document.getElementById('testimonials-dots');
+  if (!track || !dotsEl) return;
+
+  const starsSVG = (n) => Array.from({length: n}, () =>
+    `<svg class="star" viewBox="0 0 24 24" fill="#FACC15" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    </svg>`
+  ).join('');
+
+  track.innerHTML = combined.map(t => {
+    const initials = t.name.split(' ').map(w => w[0]).join('').slice(0, 2);
+    return `
+    <div class="testimonial-card" role="group">
+      <div class="testimonial-quote">"</div>
+      <div class="testimonial-stars">${starsSVG(t.note)}</div>
+      <p class="testimonial-text">"${escapeHTML(t.text)}"</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">${escapeHTML(initials)}</div>
+        <div class="testimonial-author-info">
+          <strong>${escapeHTML(t.name)}</strong>
+          <span>${escapeHTML(t.ville)}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  dotsEl.innerHTML = combined.map((_, i) =>
+    `<button class="t-dot ${i === 0 ? 'active' : ''}" onclick="goToTestimonial(${i})" aria-label="Aller au témoignage ${i + 1}"></button>`
+  ).join('');
+
+  testimonialIndex = 0;
+  document.getElementById('t-prev').onclick = () => goToTestimonial((testimonialIndex - 1 + combined.length) % combined.length);
+  document.getElementById('t-next').onclick = () => goToTestimonial((testimonialIndex + 1) % combined.length);
+  startTestimonialTimer();
+  if (window._lucideRefresh) window._lucideRefresh();
+}
+
+// --- Init au chargement
+document.addEventListener('DOMContentLoaded', function() {
+  updateAvisBadge();
+  refreshTestimonialsFromAvis();
+  // Patch switchAdminTab to also render avis
+  const _origSwitch = window.switchAdminTab;
+  window.switchAdminTab = function(tab) {
+    _origSwitch(tab);
+    if (tab === 'avis') {
+      switchAvisFilter(_avisFilter || 'pending');
+    }
+  };
+});

@@ -10,7 +10,7 @@
   <meta property="og:title" content="Christophe POLLET – Maçon &amp; Rénovation Plaisir 78" />
   <meta property="og:description" content="Maçonnerie, rénovation, terrasses et ravalement pierres dans les Yvelines. Artisan de confiance depuis plus de 20 ans." />
   <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="styles.css?v=4.0" />
+  <link rel="stylesheet" href="styles.css?v=5.0" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -378,6 +378,50 @@
           <i data-lucide="chevron-right" style="width:18px;height:18px;"></i>
         </button>
       </div>
+    </div>
+  </section>
+
+  <!-- Formulaire laisser un avis -->
+  <section class="section avis-form-section" id="avis-form-section">
+    <div class="section-inner" style="max-width:640px;">
+      <div class="section-header fade-in">
+        <span class="section-tag">Votre expérience</span>
+        <h2 class="section-title">Laisser un <span>avis</span></h2>
+        <p class="section-desc">Votre retour aide d'autres particuliers à nous faire confiance. Votre avis sera vérifié avant publication.</p>
+      </div>
+      <form class="avis-form fade-in" id="avis-submit-form" onsubmit="submitAvis(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="avis-nom">Votre prénom et nom <span class="req">*</span></label>
+            <input type="text" id="avis-nom" placeholder="Ex: Marie Dupont" required />
+          </div>
+          <div class="form-group">
+            <label for="avis-ville">Ville</label>
+            <input type="text" id="avis-ville" placeholder="Ex: Plaisir (78370)" />
+          </div>
+          <div class="form-group full">
+            <label>Note <span class="req">*</span></label>
+            <div class="star-rating" id="star-rating" role="group" aria-label="Note de 1 à 5 étoiles">
+              <button type="button" class="star-btn" data-val="1" aria-label="1 étoile" onclick="setStarRating(1)">★</button>
+              <button type="button" class="star-btn" data-val="2" aria-label="2 étoiles" onclick="setStarRating(2)">★</button>
+              <button type="button" class="star-btn" data-val="3" aria-label="3 étoiles" onclick="setStarRating(3)">★</button>
+              <button type="button" class="star-btn" data-val="4" aria-label="4 étoiles" onclick="setStarRating(4)">★</button>
+              <button type="button" class="star-btn" data-val="5" aria-label="5 étoiles" onclick="setStarRating(5)">★</button>
+            </div>
+            <input type="hidden" id="avis-note" value="0" />
+          </div>
+          <div class="form-group full">
+            <label for="avis-text">Votre avis <span class="req">*</span></label>
+            <textarea id="avis-text" placeholder="Décrivez votre expérience avec Christophe..." style="min-height:110px;" required></textarea>
+          </div>
+        </div>
+        <div id="avis-success" style="display:none; background:linear-gradient(135deg,#25d366,#1ea855); color:#fff; padding:14px 20px; border-radius:12px; font-weight:600; margin-bottom:16px; text-align:center;">
+          ✅ Merci ! Votre avis a bien été reçu et sera publié après vérification.
+        </div>
+        <button type="submit" class="btn-submit" id="btn-avis-submit">
+          <i data-lucide="send" class="btn-icon"></i> Envoyer mon avis
+        </button>
+      </form>
     </div>
   </section>
   <div class="wave-divider" aria-hidden="true" style="margin-top: -1px;">
@@ -842,6 +886,10 @@
       <button class="admin-tab active" id="tab-devis" role="tab" onclick="switchAdminTab('devis')">
         <i data-lucide="clipboard-list" class="tab-icon"></i> Demandes de devis
       </button>
+      <button class="admin-tab" id="tab-avis" role="tab" onclick="switchAdminTab('avis')">
+        <i data-lucide="star" class="tab-icon"></i> Avis clients
+        <span id="avis-badge" style="display:none; background:#D42B27; color:#fff; font-size:0.65rem; font-weight:800; padding:1px 7px; border-radius:50px; margin-left:6px;"></span>
+      </button>
       <button class="admin-tab" id="tab-chantiers" role="tab" onclick="switchAdminTab('chantiers')">
         <i data-lucide="image" class="tab-icon"></i> Gestion chantiers
       </button>
@@ -862,6 +910,18 @@
           <tbody id="devis-tbody"></tbody>
         </table>
       </div>
+    </div>
+
+    <!-- Panel Avis -->
+    <div class="admin-panel" id="panel-avis" role="tabpanel">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
+        <h3 style="font-size:1.1rem; color:var(--bleu-dark); font-weight:700;">Avis en attente de validation</h3>
+        <div style="display:flex; gap:8px;">
+          <button class="btn-outline btn-sm" onclick="switchAvisFilter('pending')" id="avis-filter-pending" style="border-color:var(--rouge); color:var(--rouge);">En attente</button>
+          <button class="btn-outline btn-sm" onclick="switchAvisFilter('approved')" id="avis-filter-approved">Publiés</button>
+        </div>
+      </div>
+      <div id="admin-avis-list"></div>
     </div>
 
     <div class="admin-panel" id="panel-chantiers" role="tabpanel">
@@ -1056,7 +1116,7 @@
 </div>
 
 <canvas id="confetti-canvas" aria-hidden="true"></canvas>
-<script src="script.js?v=4.0"></script>
+<script src="script.js?v=5.0"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     if (typeof lucide !== 'undefined') lucide.createIcons();
