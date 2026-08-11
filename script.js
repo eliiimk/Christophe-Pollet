@@ -532,8 +532,8 @@ function createProjectCardHTML(p) {
       </div>
     </div>` : `
     <div class="comparison-container" data-active="false">
-      <img class="comparison-img before-img" src="${p.avant}" alt="Avant – ${escapeHTML(p.titre)}" loading="lazy"/>
-      <img class="comparison-img after-img" src="${p.apres}" alt="Après – ${escapeHTML(p.titre)}" loading="lazy"/>
+      <img class="comparison-img after-img-bg" src="${p.apres}" alt="Après – ${escapeHTML(p.titre)}" loading="lazy"/>
+      <img class="comparison-img before-img-top" src="${p.avant}" alt="Avant – ${escapeHTML(p.titre)}" loading="lazy"/>
       <div class="comparison-handle">
         <div class="comparison-handle-btn">⟺</div>
       </div>
@@ -572,7 +572,7 @@ function setupComparators() {
     if (container.dataset.initialized === 'true') return;
     container.dataset.initialized = 'true';
 
-    const afterImg = container.querySelector('.after-img');
+    const topImg = container.querySelector('.before-img-top') || container.querySelector('.before-img');
     const handle = container.querySelector('.comparison-handle');
     let isDragging = false;
 
@@ -581,8 +581,8 @@ function setupComparators() {
       let pos = (clientX - rect.left) / rect.width;
       pos = Math.max(0.02, Math.min(0.98, pos));
       const pct = pos * 100;
-      afterImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-      handle.style.left = pct + '%';
+      if (topImg) topImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      if (handle) handle.style.left = pct + '%';
     }
 
     container.addEventListener('mousedown', e => { isDragging = true; setPosition(e.clientX); e.preventDefault(); });
@@ -592,8 +592,8 @@ function setupComparators() {
     document.addEventListener('touchmove', e => { if (isDragging) setPosition(e.touches[0].clientX); }, { passive: true });
     document.addEventListener('touchend', () => { isDragging = false; });
 
-    afterImg.style.clipPath = 'inset(0 50% 0 0)';
-    handle.style.left = '50%';
+    if (topImg) topImg.style.clipPath = 'inset(0 50% 0 0)';
+    if (handle) handle.style.left = '50%';
   });
 }
 

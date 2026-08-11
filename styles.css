@@ -1104,7 +1104,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   cursor: ew-resize;
 }
 .comparison-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.comparison-img.after-img { clip-path: inset(0 50% 0 0); }
+.comparison-img.before-img-top, .comparison-img.before-img { clip-path: inset(0 50% 0 0); }
 .comparison-handle {
   position: absolute;
   top: 0;
