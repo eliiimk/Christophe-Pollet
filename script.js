@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
    LOCALSTORAGE
 ──────────────────────────────────────────────────────────────── */
 function loadData() {
-  const dataVer = localStorage.getItem('cp_v5_badge_top');
+  const dataVer = localStorage.getItem('cp_v6_force_clear');
   if (!dataVer) {
     localStorage.removeItem('cp_projects');
-    localStorage.setItem('cp_v5_badge_top', 'true');
+    localStorage.setItem('cp_v6_force_clear', 'true');
   }
   const savedProjects = localStorage.getItem('cp_projects');
   const savedDevis = localStorage.getItem('cp_devis');
