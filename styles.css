@@ -417,7 +417,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
    SECTIONS
    ================================================================ */
 .section { padding: var(--space-2xl) 0; }
-.section-inner { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg); }
+.section-inner { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; box-sizing: border-box; }
 .section-header { text-align: center; margin-bottom: var(--space-2xl); }
 .section-tag {
   display: inline-block;
@@ -1225,17 +1225,36 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 .devis-form-card .subtitle { font-size: 0.9rem; color: var(--gris-mid); margin-bottom: var(--space-xl); }
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-md);
   margin-bottom: var(--space-md);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-group.full { grid-column: 1 / -1; }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.form-group.full {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+}
 .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--gris-texte); }
 .form-group label span.req { color: var(--rouge); }
 .form-group input,
 .form-group select,
 .form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 12px 16px;
   border: 1.5px solid var(--beige-mid);
   border-radius: var(--radius-md);
@@ -2304,6 +2323,11 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .avis-form-section {
   background: var(--beige-light, #faf8f4);
   padding-bottom: var(--space-xl);
+  overflow-x: hidden;
+}
+.avis-form-section .section-inner {
+  max-width: 640px;
+  overflow: hidden;
 }
 .avis-form {
   background: var(--blanc);
@@ -2311,6 +2335,35 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   padding: var(--space-xl);
   box-shadow: var(--shadow-md);
   border: 1.5px solid var(--beige-mid, #e0d9cc);
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.avis-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.avis-form .form-group {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.avis-form .form-group input,
+.avis-form .form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.avis-form .btn-submit {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Interactive star rating */
