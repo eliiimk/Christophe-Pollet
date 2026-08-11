@@ -178,9 +178,7 @@
       <span class="sep">·</span>
       <span>Plaisir · Versailles · Yvelines 78</span>
       <span class="sep">·</span>
-      <span>Devis gratuit sous 48h</span>
-      <span class="sep">·</span>
-      <span>Assurance décennale</span>
+      <span>Devis gratuit sur place</span>
       <span class="sep">·</span>
       <span>Note clients 4.9 ★</span>
       <span class="sep">·</span>
@@ -190,9 +188,7 @@
       <span class="sep">·</span>
       <span>Plaisir · Versailles · Yvelines 78</span>
       <span class="sep">·</span>
-      <span>Devis gratuit sous 48h</span>
-      <span class="sep">·</span>
-      <span>Assurance décennale</span>
+      <span>Devis gratuit sur place</span>
       <span class="sep">·</span>
       <span>Note clients 4.9 ★</span>
     </div>
@@ -209,15 +205,6 @@
   <div class="trust-badges-section fade-in">
     <div class="section-inner">
       <div class="trust-badges-grid">
-        <div class="trust-badge-card">
-          <div class="trust-badge-icon" style="background:linear-gradient(135deg,#D42B27,#A61F1C);">
-            <i data-lucide="shield-check" style="width:24px;height:24px;color:#fff;"></i>
-          </div>
-          <div class="trust-badge-info">
-            <strong>Assurance décennale</strong>
-            <div class="trust-badge-label">Travaux garantis 10 ans</div>
-          </div>
-        </div>
         <div class="trust-badge-card">
           <div class="trust-badge-icon" style="background:linear-gradient(135deg,#D4A017,#A37B12);">
             <i data-lucide="award" style="width:24px;height:24px;color:#fff;"></i>
@@ -238,11 +225,20 @@
         </div>
         <div class="trust-badge-card">
           <div class="trust-badge-icon" style="background:linear-gradient(135deg,#16a34a,#166534);">
-            <i data-lucide="clock" style="width:24px;height:24px;color:#fff;"></i>
+            <i data-lucide="file-check" style="width:24px;height:24px;color:#fff;"></i>
           </div>
           <div class="trust-badge-info">
-            <strong>Devis sous 48h</strong>
-            <div class="trust-badge-label">Réponse garantie et gratuite</div>
+            <strong>Devis gratuit sur place</strong>
+            <div class="trust-badge-label">Sans engagement, à votre domicile</div>
+          </div>
+        </div>
+        <div class="trust-badge-card">
+          <div class="trust-badge-icon" style="background:linear-gradient(135deg,#7C3AED,#5B21B6);">
+            <i data-lucide="star" style="width:24px;height:24px;color:#fff;"></i>
+          </div>
+          <div class="trust-badge-info">
+            <strong>Note clients 4.9★</strong>
+            <div class="trust-badge-label">Satisfaction client garantie</div>
           </div>
         </div>
       </div>
@@ -286,70 +282,7 @@
     </div>
   </section>
 
-  <!-- Section Partenaires / Fournisseurs -->
-  <section class="section partners-section" style="background:var(--beige);">
-    <div class="section-inner">
-      <div class="section-header fade-in">
-        <span class="section-tag">Nos fournisseurs</span>
-        <h2 class="section-title">Des matériaux <span>de qualité</span></h2>
-        <p class="section-desc">Nous travaillons exclusivement avec des fournisseurs reconnus pour garantir la durabilité et l'ésthétique de chaque réalisation.</p>
-      </div>
-      <div class="partners-grid fade-in">
-        <div class="partner-card"><div class="partner-logo-text" style="color:#E63946;">Weber</div><span>Mortiers &amp; enduits</span></div>
-        <div class="partner-card"><div class="partner-logo-text" style="color:#1D6FA4;">Lafarge</div><span>Ciments &amp; bétons</span></div>
-        <div class="partner-card"><div class="partner-logo-text" style="color:#F4A261;">Mapei</div><span>Colles &amp; joints</span></div>
-        <div class="partner-card"><div class="partner-logo-text" style="color:#2A9D8F;">Parexlanko</div><span>Ravalement</span></div>
-        <div class="partner-card"><div class="partner-logo-text" style="color:#6B4E3D;">Alkern</div><span>Parpaings &amp; blocs</span></div>
-        <div class="partner-card"><div class="partner-logo-text" style="color:#8338EC;">Rinn</div><span>Pavés &amp; bordures</span></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Calculateur -->
-  <section class="section" style="background:var(--blanc);">
-    <div class="section-inner">
-      <div class="section-header fade-in">
-        <span class="section-tag">Outil pratique</span>
-        <h2 class="section-title">Estimez votre <span>budget travaux</span></h2>
-        <p class="section-desc">Utilisez notre calculateur pour obtenir une estimation indicative de coût. Votre devis précis sera établi lors de la visite gratuite.</p>
-      </div>
-      <div class="calculator-card fade-in" id="calculator-card">
-        <div class="calc-row">
-          <label for="calc-type">Type de prestation</label>
-          <select id="calc-type" onchange="calcUpdate()">
-            <option value="terrasse">Terrasse en pierre / dallage</option>
-            <option value="maconnerie">Maçonnerie générale</option>
-            <option value="ravalement">Ravalement de façade</option>
-            <option value="renovation">Rénovation intérieure</option>
-          </select>
-        </div>
-        <div class="calc-row">
-          <label for="calc-surface">Surface concernée</label>
-          <div class="calc-slider-row">
-            <input type="range" id="calc-surface" min="10" max="300" value="80" oninput="calcUpdate()" />
-            <span id="calc-surface-val">80 m²</span>
-          </div>
-        </div>
-        <div class="calc-row">
-          <label for="calc-qualite">Niveau de finition</label>
-          <div class="calc-chips" role="group">
-            <button class="calc-chip active" id="chip-eco" onclick="setChip('eco')" type="button">Classique</button>
-            <button class="calc-chip" id="chip-mid" onclick="setChip('mid')" type="button">Premium</button>
-            <button class="calc-chip" id="chip-lux" onclick="setChip('lux')" type="button">Luxe</button>
-          </div>
-        </div>
-        <div class="calc-result">
-          <div class="calc-result-label">Estimation indicative</div>
-          <div class="calc-result-value" id="calc-result">3 200 – 4 800 €</div>
-          <div class="calc-result-note">Hors main d'œuvre si non précisé · Estimation non contractuelle</div>
-        </div>
-        <button class="btn-primary" style="width:100%;margin-top:var(--space-md);" onclick="showPage('contact')">
-          <i data-lucide="send" class="btn-icon"></i>
-          Obtenir un vrai devis gratuit
-        </button>
-      </div>
-    </div>
-  </section>
 
   <!-- TÉMOIGNAGES -->
   <div class="wave-divider" aria-hidden="true" style="transform: rotate(180deg); margin-bottom: -1px;">
@@ -458,7 +391,7 @@
           <div class="timeline-content">
             <i data-lucide="clipboard-list" class="timeline-icon" style="color:#D4A017;"></i>
             <h3>Visite &amp; devis gratuit</h3>
-            <p>Nous venons sur site pour évaluer les travaux. Un devis détaillé et transparent vous est remis sous 48h, sans engagement.</p>
+            <p>Je me déplace sur site pour évaluer les travaux. Un devis détaillé et transparent vous est remis gratuitement, sans engagement.</p>
           </div>
         </div>
 
@@ -466,7 +399,7 @@
           <div class="timeline-content">
             <i data-lucide="hard-hat" class="timeline-icon" style="color:var(--bleu);"></i>
             <h3>Réalisation des travaux</h3>
-            <p>Nos équipes interviennent selon le planning convenu. Chantier propre, matériaux de qualité, respect des délais contractuels.</p>
+            <p>J'interviens selon le planning convenu. Chantier propre, matériaux de qualité, travail soigné.</p>
           </div>
           <div class="timeline-dot" style="background:linear-gradient(135deg,var(--bleu),var(--bleu-dark));">3</div>
           <div style="width:calc(50% - 52px);"></div>
@@ -478,7 +411,7 @@
           <div class="timeline-content">
             <i data-lucide="check-circle" class="timeline-icon" style="color:#16a34a;"></i>
             <h3>Livraison &amp; satisfaction</h3>
-            <p>Visite de réception avec le client. Nous ne partons pas tant que vous n'êtes pas 100% satisfait du résultat.</p>
+            <p>Visite de réception avec le client. Je ne pars pas tant que vous n'êtes pas 100% satisfait du résultat.</p>
           </div>
         </div>
 
@@ -491,11 +424,11 @@
     <div class="red-banner-inner">
       <div>
         <h2>Besoin d'un artisan fiable et disponible ?</h2>
-        <p>Devis gratuit sous 48h · Zone d'intervention : Plaisir, Versailles, Saint-Germain-en-Laye et toutes les Yvelines</p>
+        <p>Zone d'intervention : Plaisir, Versailles, Saint-Germain-en-Laye et toutes les Yvelines</p>
       </div>
       <button class="btn-white" id="banner-cta" onclick="showPage('contact')">
         <i data-lucide="phone" class="btn-icon"></i>
-        Nous contacter
+        Me contacter
       </button>
     </div>
   </div>
@@ -522,7 +455,7 @@
             <i data-lucide="map-pin" class="svc-icon"></i>
           </div>
           <h3>Artisan Local</h3>
-          <p>Basé à Plaisir (78370), nous intervenons rapidement dans toutes les Yvelines. Réactif et disponible.</p>
+          <p>Basé à Plaisir (78370), j'interviens rapidement dans toutes les Yvelines. Réactif et disponible.</p>
         </div>
         <div class="service-card fade-in" id="why-quality">
           <div class="card-glow"></div>
@@ -530,15 +463,15 @@
             <i data-lucide="shield-check" class="svc-icon"></i>
           </div>
           <h3>Qualité Garantie</h3>
-          <p>Matériaux sélectionnés, finitions soignées, respect des délais. Votre satisfaction est notre priorité.</p>
+          <p>Matériaux sélectionnés, finitions soignées. Votre satisfaction est ma priorité.</p>
         </div>
         <div class="service-card fade-in" id="why-devis">
           <div class="card-glow"></div>
           <div class="service-icon" style="background: linear-gradient(135deg, #EA580C, #9A3412); box-shadow: 0 4px 16px rgba(234,88,12,0.35);">
             <i data-lucide="file-check" class="svc-icon"></i>
           </div>
-          <h3>Devis Gratuit &amp; Rapide</h3>
-          <p>Demande en ligne ou par téléphone, réponse sous 48h. Transparence totale sur les prix.</p>
+          <h3>Devis Gratuit &amp; Transparent</h3>
+          <p>Demande en ligne ou par téléphone. Transparence totale sur les prix, sans surprises.</p>
         </div>
       </div>
     </div>
@@ -550,7 +483,7 @@
       <div class="section-header fade-in">
         <span class="section-tag">Questions fréquentes</span>
         <h2 class="section-title">Vous avez des <span>questions</span> ?</h2>
-        <p class="section-desc">Tout ce qu'il faut savoir avant de démarrer vos travaux avec nous.</p>
+        <p class="section-desc">Tout ce qu'il faut savoir avant de démarrer vos travaux avec moi.</p>
       </div>
       <div class="faq-list" id="faq-list">
         <!-- Généré par JS -->
@@ -731,7 +664,7 @@
     <div class="page-header-checker"></div>
     <div class="page-header-content">
       <h1>Devis Gratuit</h1>
-      <p>Remplissez le formulaire ou appelez-nous directement. Réponse garantie sous 48h.</p>
+      <p>Remplissez le formulaire ou appelez-moi directement. Je vous rappelle dès que possible.</p>
     </div>
   </div>
 
@@ -787,7 +720,7 @@
 
         <div class="devis-form-card fade-in" id="devis-form-card">
           <h2>Demande de devis</h2>
-          <p class="subtitle">Décrivez votre projet, nous vous répondons sous 48h.</p>
+          <p class="subtitle">Décrivez votre projet, je vous recontacte rapidement.</p>
           <form id="devis-form" novalidate>
             <div class="form-grid">
               <div class="form-group">
