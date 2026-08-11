@@ -642,7 +642,7 @@ function setupDevisForm() {
     form.reset();
     document.getElementById('char-count').textContent = '0';
     fields.forEach(el => el.classList.remove('error'));
-    showToast('Votre demande a bien été envoyée ! Nous vous répondrons sous 48h.', false);
+    showToast('Votre demande a bien été envoyée ! Je vous recontacte dès que possible.', false);
   });
 }
 
@@ -979,8 +979,8 @@ function applyDark(isDark) {
 ──────────────────────────────────────────────────────────────── */
 const FAQ_DATA = [
   { q: "Intervenez-vous uniquement à Plaisir ?", a: "Non, j'interviens dans toute la zone des Yvelines (78), notamment à Versailles, Saint-Germain-en-Laye, Trappes, Élancourt, Maurepas, Poissy, Mantes-la-Jolie et Rambouillet, dans un rayon de 30 km autour de Plaisir." },
-  { q: "Le devis est-il vraiment gratuit et sans engagement ?", a: "Oui, totalement. Je me déplace sur votre chantier, j'évalue les travaux et je vous remets un devis détaillé sous 48h, sans aucun frais et sans obligation de signature." },
-  { q: "Quels sont vos délais d'intervention habituels ?", a: "Je réalise la visite et le devis sous 48 à 72h. Pour les travaux, les délais dépendent de leur ampleur. En général, je démarre dans les 2 à 4 semaines suivant la signature du devis." },
+  { q: "Le devis est-il vraiment gratuit et sans engagement ?", a: "Oui, totalement. Je me déplace sur votre chantier, j'évalue les travaux et je vous remets un devis détaillé dans les meilleurs délais, sans aucun frais et sans obligation de signature." },
+  { q: "Quels sont vos délais d'intervention habituels ?", a: "Je vous recontacte rapidement pour organiser une visite sur place et établir un devis. Pour les travaux, les délais dépendent de leur ampleur. En général, je démarre dans les semaines suivant la signature du devis." },
   { q: "Réalisez-vous les petits travaux ou seulement les gros chantiers ?", a: "J'interviens sur tous types de travaux, des petites réparations (rejointoiement, petite maçonnerie) aux chantiers de rénovation complète." },
   { q: "Puis-je suivre l'avancement de mon chantier ?", a: "Oui, je maintiens un contact régulier avec mes clients tout au long du chantier. Vous pouvez m'appeler ou m'envoyer un message WhatsApp à tout moment. Une visite de réception est réalisée à la livraison." }
 ];
