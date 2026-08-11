@@ -896,12 +896,26 @@
               <textarea id="ap-desc" style="min-height:80px;" placeholder="Décrivez les travaux réalisés..."></textarea>
             </div>
             <div class="form-group">
-              <label for="ap-avant-url">URL image AVANT</label>
-              <input type="text" id="ap-avant-url" placeholder="assets/before_mur.png"/>
+              <label for="ap-avant-file">Image AVANT</label>
+              <div class="file-upload-zone" id="drop-avant" onclick="document.getElementById('ap-avant-file').click()">
+                <input type="file" id="ap-avant-file" accept="image/*" style="display:none" onchange="previewUpload(this, 'preview-avant')"/>
+                <div class="file-upload-placeholder" id="placeholder-avant">
+                  <i data-lucide="image-plus" style="width:28px;height:28px;color:var(--gris-mid);"></i>
+                  <span>Cliquez ou glissez une photo</span>
+                </div>
+                <img id="preview-avant" class="file-upload-preview" src="" alt="Aperçu avant" style="display:none"/>
+              </div>
             </div>
             <div class="form-group">
-              <label for="ap-apres-url">URL image APRÈS</label>
-              <input type="text" id="ap-apres-url" placeholder="assets/after_mur.png"/>
+              <label for="ap-apres-file">Image APRÈS <span class="req">*</span></label>
+              <div class="file-upload-zone" id="drop-apres" onclick="document.getElementById('ap-apres-file').click()">
+                <input type="file" id="ap-apres-file" accept="image/*" style="display:none" onchange="previewUpload(this, 'preview-apres')"/>
+                <div class="file-upload-placeholder" id="placeholder-apres">
+                  <i data-lucide="image-plus" style="width:28px;height:28px;color:var(--gris-mid);"></i>
+                  <span>Cliquez ou glissez une photo</span>
+                </div>
+                <img id="preview-apres" class="file-upload-preview" src="" alt="Aperçu après" style="display:none"/>
+              </div>
             </div>
           </div>
           <button type="submit" class="btn-blue" id="btn-add-project">

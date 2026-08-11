@@ -765,6 +765,25 @@ function setupAddProjectForm() {
   const form = document.getElementById('add-project-form');
   if (!form) return;
 
+  // Drag-and-drop support for upload zones
+  ['drop-avant', 'drop-apres'].forEach(zoneId => {
+    const zone = document.getElementById(zoneId);
+    if (!zone) return;
+    const fileInput = zone.querySelector('input[type="file"]');
+    const previewId = zoneId === 'drop-avant' ? 'preview-avant' : 'preview-apres';
+
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('dragover');
+      if (e.dataTransfer.files.length) {
+        fileInput.files = e.dataTransfer.files;
+        previewUpload(fileInput, previewId);
+      }
+    });
+  });
+
   form.addEventListener('submit', e => {
     e.preventDefault();
     const titre    = document.getElementById('ap-titre').value.trim();
@@ -772,20 +791,61 @@ function setupAddProjectForm() {
     const ville    = document.getElementById('ap-ville').value.trim();
     const date     = document.getElementById('ap-date').value;
     const desc     = document.getElementById('ap-desc').value.trim();
-    const avant    = document.getElementById('ap-avant-url').value.trim() || 'assets/before_mur.png';
-    const apres    = document.getElementById('ap-apres-url').value.trim() || 'assets/after_mur.png';
 
     if (!titre || !categorie) { showToast('Veuillez renseigner le titre et la catégorie.', true); return; }
 
-    projects.unshift({ id: 'p' + Date.now(), titre, categorie, ville: ville || 'Yvelines (78)', date: date || new Date().toISOString().substring(0, 7), desc, avant, apres });
-    saveData();
-    form.reset();
-    renderAdminProjects();
-    renderProjectsGrid();
-    updateAdminStats();
-    showToast('Chantier ajouté avec succès !', false);
-    switchAdminTab('chantiers');
+    const avantFile = document.getElementById('ap-avant-file').files[0];
+    const apresFile = document.getElementById('ap-apres-file').files[0];
+
+    // Read files as Data URL (base64)
+    const readFile = (file) => new Promise((resolve) => {
+      if (!file) { resolve(''); return; }
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.readAsDataURL(file);
+    });
+
+    Promise.all([readFile(avantFile), readFile(apresFile)]).then(([avantData, apresData]) => {
+      const avant = avantData || '';
+      const apres = apresData || 'assets/after_mur.png';
+
+      projects.unshift({ id: 'p' + Date.now(), titre, categorie, ville: ville || 'Yvelines (78)', date: date || new Date().toISOString().substring(0, 7), desc, avant, apres });
+      saveData();
+      form.reset();
+      // Reset previews
+      ['preview-avant', 'preview-apres'].forEach(id => {
+        const img = document.getElementById(id);
+        if (img) { img.style.display = 'none'; img.src = ''; }
+      });
+      ['placeholder-avant', 'placeholder-apres'].forEach(id => {
+        const ph = document.getElementById(id);
+        if (ph) ph.style.display = '';
+      });
+      renderAdminProjects();
+      renderProjectsGrid();
+      updateAdminStats();
+      showToast('Chantier ajouté avec succès !', false);
+      switchAdminTab('chantiers');
+      if (window._lucideRefresh) window._lucideRefresh();
+    });
   });
+}
+
+/* ────────────────────────────────────────────────────────────────
+   FILE UPLOAD PREVIEW
+──────────────────────────────────────────────────────────────── */
+function previewUpload(input, previewId) {
+  const file = input.files[0];
+  const preview = document.getElementById(previewId);
+  const placeholder = preview?.parentElement?.querySelector('.file-upload-placeholder');
+  if (!file || !preview) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    preview.src = reader.result;
+    preview.style.display = 'block';
+    if (placeholder) placeholder.style.display = 'none';
+  };
+  reader.readAsDataURL(file);
 }
 
 /* ────────────────────────────────────────────────────────────────
