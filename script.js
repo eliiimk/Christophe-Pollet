@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
    LOCALSTORAGE
 ──────────────────────────────────────────────────────────────── */
 function loadData() {
-  const dataVer = localStorage.getItem('cp_v4_renamed');
+  const dataVer = localStorage.getItem('cp_v5_badge_top');
   if (!dataVer) {
     localStorage.removeItem('cp_projects');
-    localStorage.setItem('cp_v4_renamed', 'true');
+    localStorage.setItem('cp_v5_badge_top', 'true');
   }
   const savedProjects = localStorage.getItem('cp_projects');
   const savedDevis = localStorage.getItem('cp_devis');
@@ -537,10 +537,8 @@ function createProjectCardHTML(p) {
       <div class="comparison-handle">
         <div class="comparison-handle-btn">⟺</div>
       </div>
-      <div class="comparison-labels">
-        <span class="comparison-label avant">Avant</span>
-        <span class="comparison-label apres">Après</span>
-      </div>
+      <span class="comparison-badge badge-avant">Avant</span>
+      <span class="comparison-badge badge-apres">Après</span>
     </div>`;
 
   return `
