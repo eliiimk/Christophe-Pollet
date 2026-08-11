@@ -837,11 +837,11 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
    ================================================================ */
 #fab-phone {
   position: fixed;
-  bottom: 100px;
-  right: 28px;
+  bottom: 84px;
+  right: 24px;
   z-index: 900;
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   background: linear-gradient(135deg, var(--rouge), var(--rouge-dark));
   border-radius: 50%;
   display: flex;
@@ -875,11 +875,11 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
    ================================================================ */
 #back-to-top {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
+  bottom: 24px;
+  right: 24px;
   z-index: 900;
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   background: var(--bleu-dark);
   border-radius: 50%;
   display: flex;
@@ -1803,9 +1803,9 @@ footer::before {
    ================================================================ */
 #fab-whatsapp {
   position: fixed;
-  bottom: 168px; right: 28px;
+  bottom: 144px; right: 24px;
   z-index: 900;
-  width: 52px; height: 52px;
+  width: 48px; height: 48px;
   background: #25D366;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -1924,7 +1924,9 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
 
 @media (max-width: 768px) {
   /* Navigation mobile */
-  .navbar-inner { padding: 0 var(--space-md); height: 68px; }
+  .nav-inner { padding: 0 var(--space-md); height: 68px; display: flex; align-items: center; justify-content: space-between; }
+  .logo-tagline { display: none; }
+  .logo-name { font-size: 1rem; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex;
@@ -1935,14 +1937,14 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     padding: var(--space-lg) var(--space-md);
-    border-bottom: 2px solid var(--beige-mid);
+    border-bottom: 3px solid var(--rouge);
     box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-    z-index: 999;
+    z-index: 9999;
     gap: var(--space-sm);
   }
   .dark-mode .nav-links.open {
     background: rgba(26, 26, 26, 0.98);
-    border-bottom-color: #333;
+    border-bottom-color: var(--rouge);
   }
   .nav-link {
     padding: 12px 16px;
@@ -1950,7 +1952,7 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
     width: 100%;
     border-radius: var(--radius-md);
   }
-  .nav-burger { display: flex; }
+  .nav-burger { display: flex; z-index: 10001; }
 
   /* Hero Mobile */
   .hero-section { min-height: auto; padding-top: 100px; padding-bottom: 60px; }
@@ -1993,8 +1995,11 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
   .timeline-content { width: 100%; }
   .trust-badges-grid { gap: var(--space-md); }
   .trust-badge-card { min-width: unset; width: 100%; padding: var(--space-md); }
-  #fab-phone { bottom: 84px; right: 16px; width: 48px; height: 48px; }
-  #back-to-top { bottom: 24px; right: 16px; width: 44px; height: 44px; }
+
+  /* Floating bubbles alignment on Mobile */
+  #back-to-top { bottom: 20px; right: 16px; width: 44px; height: 44px; }
+  #fab-phone { bottom: 74px; right: 16px; width: 44px; height: 44px; }
+  #fab-whatsapp { bottom: 128px; right: 16px; width: 44px; height: 44px; }
 }
 
 @media (max-width: 480px) {
