@@ -27,7 +27,7 @@
   --blanc:         #FEFDFB;
   --gris-texte:    #2C2C2C;
   --gris-mid:      #5A5A5A;
-  --gris-clair:    #9A9A9A;
+  --gris-clair:    #666666; /* assombri depuis #9A9A9A pour un contraste AA (5:1+) sur fond clair — l'original ne faisait que 2,46:1 sur --beige, utilisé sur du petit texte (0,75-0,8rem) */
   --noir:          #1A1A1A;
 
   --space-xs:   0.25rem;
@@ -1197,7 +1197,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   justify-content: center;
   margin-bottom: var(--space-md);
 }
-.contact-card h3 { font-size: 1rem; color: var(--bleu-dark); margin-bottom: var(--space-sm); font-weight: 700; }
+.contact-card h2 { font-size: 1rem; color: var(--bleu-dark); margin-bottom: var(--space-sm); font-weight: 700; }
 .contact-card a, .contact-card p { font-size: 0.95rem; color: var(--gris-mid); line-height: 1.6; }
 .contact-card a:hover { color: var(--rouge); }
 .zones-list { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-sm); }
@@ -1694,7 +1694,7 @@ footer::before {
 .dark-mode .modal,
 .dark-mode .testimonial-card { background: #2a2a2a; border-color: #3a3a3a; }
 .dark-mode .service-card h3,
-.dark-mode .contact-card h3,
+.dark-mode .contact-card h2,
 .dark-mode .devis-form-card h2,
 .dark-mode .section-title,
 .dark-mode .prestation-content h2,
