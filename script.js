@@ -103,6 +103,15 @@ function saveData() {
 
 let isAdminLoggedIn = false;
 
+/* Active un élément role="button" au clavier (Entrée / Espace) — équivalent clavier
+   pour les éléments non natifs (div/span) qui ne réagissent qu'au clic souris (RGAA 7.3). */
+function activateOnKey(e, fn) {
+  if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+    e.preventDefault();
+    fn();
+  }
+}
+
 function showPage(pageName) {
   if (pageName === 'admin' && !isAdminLoggedIn && sessionStorage.getItem('cp_admin_auth') !== 'true') {
     openAdminAuthModal();

@@ -254,25 +254,25 @@
         <p class="section-desc">Des travaux de qualité artisanale, réalisés dans les règles de l'art, pour embellir et valoriser votre bien.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card fade-in" id="srv-maconnerie" onclick="showPage('prestations')" tabindex="0" role="button" aria-label="Maçonnerie générale">
+        <div class="service-card fade-in" id="srv-maconnerie" onclick="showPage('prestations')" onkeydown="activateOnKey(event, () => showPage('prestations'))" tabindex="0" role="button" aria-label="Maçonnerie générale">
           <div class="card-glow"></div>
           <div class="service-icon"><i data-lucide="brick-wall" class="svc-icon"></i></div>
           <h3>Maçonnerie Générale</h3>
           <p>Construction de murs, fondations, dalles, escaliers en pierre et béton. Travaux soignés et durables.</p>
         </div>
-        <div class="service-card fade-in" id="srv-renovation" onclick="showPage('prestations')" tabindex="0" role="button" aria-label="Rénovation">
+        <div class="service-card fade-in" id="srv-renovation" onclick="showPage('prestations')" onkeydown="activateOnKey(event, () => showPage('prestations'))" tabindex="0" role="button" aria-label="Rénovation">
           <div class="card-glow"></div>
           <div class="service-icon"><i data-lucide="hard-hat" class="svc-icon"></i></div>
           <h3>Rénovation</h3>
           <p>Rénovation complète ou partielle de votre habitation : ouvertures, reprises en sous-œuvre, consolidation.</p>
         </div>
-        <div class="service-card fade-in" id="srv-terrasses" onclick="showPage('prestations')" tabindex="0" role="button" aria-label="Terrasses">
+        <div class="service-card fade-in" id="srv-terrasses" onclick="showPage('prestations')" onkeydown="activateOnKey(event, () => showPage('prestations'))" tabindex="0" role="button" aria-label="Terrasses">
           <div class="card-glow"></div>
           <div class="service-icon"><i data-lucide="layers" class="svc-icon"></i></div>
           <h3>Terrasses</h3>
           <p>Création et pose de terrasses en pierre naturelle, carrelage extérieur, dalles béton et pavés.</p>
         </div>
-        <div class="service-card fade-in" id="srv-ravalement" onclick="showPage('prestations')" tabindex="0" role="button" aria-label="Ravalement pierres">
+        <div class="service-card fade-in" id="srv-ravalement" onclick="showPage('prestations')" onkeydown="activateOnKey(event, () => showPage('prestations'))" tabindex="0" role="button" aria-label="Ravalement pierres">
           <div class="card-glow"></div>
           <div class="service-icon"><i data-lucide="paintbrush-vertical" class="svc-icon"></i></div>
           <h3>Ravalement de Pierres</h3>
@@ -898,7 +898,7 @@
             </div>
             <div class="form-group">
               <label for="ap-avant-file">Image AVANT</label>
-              <div class="file-upload-zone" id="drop-avant" onclick="document.getElementById('ap-avant-file').click()">
+              <div class="file-upload-zone" id="drop-avant" onclick="document.getElementById('ap-avant-file').click()" onkeydown="activateOnKey(event, () => document.getElementById('ap-avant-file').click())" tabindex="0" role="button" aria-label="Choisir une image avant">
                 <input type="file" id="ap-avant-file" accept="image/*" style="display:none" onchange="previewUpload(this, 'preview-avant')"/>
                 <div class="file-upload-placeholder" id="placeholder-avant">
                   <i data-lucide="image-plus" style="width:28px;height:28px;color:var(--gris-mid);"></i>
@@ -909,7 +909,7 @@
             </div>
             <div class="form-group">
               <label for="ap-apres-file">Image APRÈS <span class="req">*</span></label>
-              <div class="file-upload-zone" id="drop-apres" onclick="document.getElementById('ap-apres-file').click()">
+              <div class="file-upload-zone" id="drop-apres" onclick="document.getElementById('ap-apres-file').click()" onkeydown="activateOnKey(event, () => document.getElementById('ap-apres-file').click())" tabindex="0" role="button" aria-label="Choisir une image après">
                 <input type="file" id="ap-apres-file" accept="image/*" style="display:none" onchange="previewUpload(this, 'preview-apres')"/>
                 <div class="file-upload-placeholder" id="placeholder-apres">
                   <i data-lucide="image-plus" style="width:28px;height:28px;color:var(--gris-mid);"></i>
