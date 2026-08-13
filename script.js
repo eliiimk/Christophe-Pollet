@@ -544,7 +544,7 @@ function createProjectCardHTML(p) {
       <div class="comparison-container" data-active="false">
         <img class="comparison-img after-img-bg" src="${p.apres}" alt="Après – ${escapeHTML(p.titre)}" loading="lazy"/>
         <img class="comparison-img before-img-top" src="${p.avant}" alt="Avant – ${escapeHTML(p.titre)}" loading="lazy"/>
-        <div class="comparison-handle">
+        <div class="comparison-handle" tabindex="0" role="slider" aria-label="Comparer avant/après – ${escapeHTML(p.titre)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50 pourcent">
           <div class="comparison-handle-btn">⟺</div>
         </div>
       </div>
@@ -585,13 +585,20 @@ function setupComparators() {
     const handle = container.querySelector('.comparison-handle');
     let isDragging = false;
 
+    function setPositionPct(pct) {
+      pct = Math.max(2, Math.min(98, pct));
+      if (topImg) topImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      if (handle) {
+        handle.style.left = pct + '%';
+        handle.setAttribute('aria-valuenow', Math.round(pct));
+        handle.setAttribute('aria-valuetext', Math.round(pct) + ' pourcent');
+      }
+    }
+
     function setPosition(clientX) {
       const rect = container.getBoundingClientRect();
-      let pos = (clientX - rect.left) / rect.width;
-      pos = Math.max(0.02, Math.min(0.98, pos));
-      const pct = pos * 100;
-      if (topImg) topImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-      if (handle) handle.style.left = pct + '%';
+      const pos = (clientX - rect.left) / rect.width;
+      setPositionPct(pos * 100);
     }
 
     container.addEventListener('mousedown', e => { isDragging = true; setPosition(e.clientX); e.preventDefault(); });
@@ -600,6 +607,23 @@ function setupComparators() {
     container.addEventListener('touchstart', e => { isDragging = true; setPosition(e.touches[0].clientX); }, { passive: true });
     document.addEventListener('touchmove', e => { if (isDragging) setPosition(e.touches[0].clientX); }, { passive: true });
     document.addEventListener('touchend', () => { isDragging = false; });
+
+    // Équivalent clavier (WCAG 2.1.1) : flèches gauche/droite pour déplacer le curseur,
+    // Origine/Fin pour aller aux extrémités. Le curseur est focusable (tabindex + role="slider").
+    if (handle) {
+      handle.addEventListener('keydown', e => {
+        const current = parseFloat(handle.getAttribute('aria-valuenow')) || 50;
+        let next = null;
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') next = current - 5;
+        else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') next = current + 5;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = 100;
+        if (next !== null) {
+          e.preventDefault();
+          setPositionPct(next);
+        }
+      });
+    }
 
     if (topImg) topImg.style.clipPath = 'inset(0 50% 0 0)';
     if (handle) handle.style.left = '50%';
