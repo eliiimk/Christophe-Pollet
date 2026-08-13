@@ -395,7 +395,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 }
 .stat-label {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.85); /* remonté depuis 0.65 : mesure sur assets/hero.png (filter brightness(0.52) + .hero-overlay) donnait 4.04:1 dans la zone des stats, sous le seuil AA 4.5:1 pour du petit texte */
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-top: 4px;
@@ -1247,8 +1247,11 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   width: 100%;
   min-width: 0;
 }
-.form-group label { font-size: 0.85rem; font-weight: 600; color: var(--gris-texte); }
-.form-group label span.req { color: var(--rouge); }
+.form-group label,
+.form-group legend { font-size: 0.85rem; font-weight: 600; color: var(--gris-texte); padding: 0; }
+.form-group label span.req,
+.form-group legend span.req { color: var(--rouge); }
+fieldset.form-group { border: 0; margin: 0; padding: 0; min-width: 0; }
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -1662,6 +1665,15 @@ footer::before {
 .mb-lg { margin-bottom: var(--space-lg); }
 .mt-lg { margin-top: var(--space-lg); }
 .hidden { display: none !important; }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* ================================================================
    DARK MODE
@@ -1673,7 +1685,7 @@ footer::before {
   --blanc:       #242424;
   --gris-texte:  #E8E8E8;
   --gris-mid:    #AAAAAA;
-  --gris-clair:  #666;
+  --gris-clair:  #9A9A9A; /* remonté depuis #666 : ~2,45:1 sur fond carte #2a2a2a en mode sombre, sous le seuil AA */
   --noir:        #0A0A0A;
 }
 .dark-mode body { background: #1A1A1A; color: #E8E8E8; }
@@ -2157,14 +2169,14 @@ body.cursor-hover #custom-cursor {
 }
 .marquee-ticker:hover .marquee-track { animation-play-state: paused; }
 .marquee-track span {
-  color: rgba(255,255,255,0.92);
+  color: #fff; /* remonté depuis rgba(...,0.92) : 4.45:1 sur --rouge (#D42B27), sous le seuil AA 4.5:1 */
   font-family: 'Outfit', sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.marquee-track span.sep { color: rgba(255,255,255,0.4); font-size: 1rem; }
+.marquee-track span.sep { color: rgba(255,255,255,0.95); font-size: 1rem; } /* remonté depuis 0.4 : 1.85:1 sur --rouge, très insuffisant */
 @keyframes marquee-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }

@@ -332,8 +332,8 @@
             <label for="avis-ville">Ville</label>
             <input type="text" id="avis-ville" placeholder="Ex: Plaisir (78370)" />
           </div>
-          <div class="form-group full">
-            <label>Note <span class="req">*</span></label>
+          <fieldset class="form-group full">
+            <legend>Note <span class="req">*</span></legend>
             <div class="star-rating" id="star-rating" role="group" aria-label="Note de 1 à 5 étoiles">
               <button type="button" class="star-btn" data-val="1" aria-label="1 étoile" onclick="setStarRating(1)">★</button>
               <button type="button" class="star-btn" data-val="2" aria-label="2 étoiles" onclick="setStarRating(2)">★</button>
@@ -342,7 +342,7 @@
               <button type="button" class="star-btn" data-val="5" aria-label="5 étoiles" onclick="setStarRating(5)">★</button>
             </div>
             <input type="hidden" id="avis-note" value="0" />
-          </div>
+          </fieldset>
           <div class="form-group full">
             <label for="avis-text">Votre avis <span class="req">*</span></label>
             <textarea id="avis-text" placeholder="Décrivez votre expérience avec Christophe..." style="min-height:110px;" required></textarea>
@@ -650,6 +650,7 @@
           <i data-lucide="hard-hat" class="filter-icon"></i> Rénovation
         </button>
       </div>
+      <h2 class="sr-only">Liste des chantiers réalisés</h2>
       <div class="projects-grid" id="projects-grid"></div>
     </div>
   </section>
@@ -675,23 +676,23 @@
         <div class="contact-info">
           <div class="contact-card fade-in" id="contact-card-tel">
             <div class="contact-card-icon"><i data-lucide="phone" class="contact-icon"></i></div>
-            <h3>Téléphone &amp; Fax</h3>
+            <h2>Téléphone &amp; Fax</h2>
             <p>Tél / Fax : <a href="tel:0130541742">01 30 54 17 42</a></p>
             <p>Portable : <a href="tel:0633551422"><strong>06 33 55 14 22</strong></a></p>
           </div>
           <div class="contact-card fade-in" id="contact-card-email">
             <div class="contact-card-icon"><i data-lucide="mail" class="contact-icon"></i></div>
-            <h3>Email</h3>
+            <h2>Email</h2>
             <a href="mailto:pollet.maconnerie@gmail.com">pollet.maconnerie@gmail.com</a>
           </div>
           <div class="contact-card fade-in" id="contact-card-adresse">
             <div class="contact-card-icon"><i data-lucide="map-pin" class="contact-icon"></i></div>
-            <h3>Adresse</h3>
+            <h2>Adresse</h2>
             <p>47, rue de Normandie<br/>78370 PLAISIR</p>
           </div>
           <div class="contact-card fade-in" id="contact-card-zones">
             <div class="contact-card-icon"><i data-lucide="map" class="contact-icon"></i></div>
-            <h3>Zone d'intervention</h3>
+            <h2>Zone d'intervention</h2>
             <div class="zones-list">
               <span class="zone-badge">Plaisir</span>
               <span class="zone-badge">Versailles</span>
@@ -848,7 +849,7 @@
     <!-- Panel Avis -->
     <div class="admin-panel" id="panel-avis" role="tabpanel">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
-        <h3 style="font-size:1.1rem; color:var(--bleu-dark); font-weight:700;">Avis en attente de validation</h3>
+        <h2 style="font-size:1.1rem; color:var(--bleu-dark); font-weight:700;">Avis en attente de validation</h2>
         <div style="display:flex; gap:8px;">
           <button class="btn-outline btn-sm" onclick="switchAvisFilter('pending')" id="avis-filter-pending" style="border-color:var(--rouge); color:var(--rouge);">En attente</button>
           <button class="btn-outline btn-sm" onclick="switchAvisFilter('approved')" id="avis-filter-approved">Publiés</button>
@@ -952,10 +953,10 @@
     <div class="footer-col">
       <h4>Prestations</h4>
       <ul>
-        <li><a onclick="showPage('prestations')">Maçonnerie Générale</a></li>
-        <li><a onclick="showPage('prestations')">Rénovation</a></li>
-        <li><a onclick="showPage('prestations')">Terrasses &amp; Dallages</a></li>
-        <li><a onclick="showPage('prestations')">Ravalement de Pierres</a></li>
+        <li><a href="#" onclick="showPage('prestations'); return false;">Maçonnerie Générale</a></li>
+        <li><a href="#" onclick="showPage('prestations'); return false;">Rénovation</a></li>
+        <li><a href="#" onclick="showPage('prestations'); return false;">Terrasses &amp; Dallages</a></li>
+        <li><a href="#" onclick="showPage('prestations'); return false;">Ravalement de Pierres</a></li>
       </ul>
     </div>
     <div class="footer-col">
