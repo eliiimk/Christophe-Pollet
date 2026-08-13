@@ -1118,6 +1118,11 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   background: #fff;
   z-index: 10;
   box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  cursor: ew-resize;
+}
+.comparison-handle:focus-visible {
+  outline: 3px solid #FACC15;
+  outline-offset: 2px;
 }
 .comparison-handle-btn {
   position: absolute;
