@@ -534,7 +534,7 @@ function createProjectCardHTML(p) {
   const isSingle = !p.avant || p.avant.trim() === '' || p.avant === p.apres;
 
   const mediaHTML = isSingle ? `
-    <div class="single-project-image" onclick="openLightbox('${p.apres}', '${escapeHTML(p.titre)}')" style="position:relative; width:100%; height:260px; overflow:hidden; cursor:zoom-in; border-radius:8px 8px 0 0;">
+    <div class="single-project-image" onclick="openLightbox('${p.apres}', '${escapeHTML(p.titre)}')" onkeydown="activateOnKey(event, () => openLightbox('${p.apres}', '${escapeHTML(p.titre)}'))" tabindex="0" role="button" aria-label="Agrandir la photo : ${escapeHTML(p.titre)}" style="position:relative; width:100%; height:260px; overflow:hidden; cursor:zoom-in; border-radius:8px 8px 0 0;">
       <img src="${p.apres}" alt="${escapeHTML(p.titre)}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease;"/>
       <div style="position:absolute; bottom:12px; right:12px; background:rgba(0,0,0,0.65); color:#fff; font-size:0.75rem; font-weight:600; padding:4px 10px; border-radius:20px; backdrop-filter:blur(4px);">
         Réalisation
